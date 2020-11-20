@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class ViewController: UIViewController {
+class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,8 @@ struct ViewControllerProvider: PreviewProvider {
     }
    
     struct ContainerView: UIViewControllerRepresentable {
-        let viewController = ViewController()
-        func makeUIViewController(context: Context) -> ViewController {
+        let viewController = AuthViewController()
+        func makeUIViewController(context: Context) -> AuthViewController {
             return viewController
         }
         func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {

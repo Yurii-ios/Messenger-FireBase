@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79452567E5B9004255D1 /* AppDelegate.swift */; };
 		F16C79482567E5B9004255D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79472567E5B9004255D1 /* SceneDelegate.swift */; };
-		F16C794A2567E5B9004255D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79492567E5B9004255D1 /* ViewController.swift */; };
+		F16C794A2567E5B9004255D1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79492567E5B9004255D1 /* AuthViewController.swift */; };
 		F16C794F2567E5BA004255D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16C794E2567E5BA004255D1 /* Assets.xcassets */; };
 		F16C79522567E5BA004255D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16C79502567E5BA004255D1 /* LaunchScreen.storyboard */; };
+		F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C795F256800FD004255D1 /* UIButton+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F16C79422567E5B9004255D1 /* Messenger + FireBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Messenger + FireBase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16C79452567E5B9004255D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F16C79472567E5B9004255D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F16C79492567E5B9004255D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F16C79492567E5B9004255D1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F16C794E2567E5BA004255D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F16C79512567E5BA004255D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F16C79532567E5BA004255D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F16C795F256800FD004255D1 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,8 @@
 			children = (
 				F16C79452567E5B9004255D1 /* AppDelegate.swift */,
 				F16C79472567E5B9004255D1 /* SceneDelegate.swift */,
-				F16C79492567E5B9004255D1 /* ViewController.swift */,
+				F16C79492567E5B9004255D1 /* AuthViewController.swift */,
+				F16C795F256800FD004255D1 /* UIButton+Extension.swift */,
 				F16C794E2567E5BA004255D1 /* Assets.xcassets */,
 				F16C79502567E5BA004255D1 /* LaunchScreen.storyboard */,
 				F16C79532567E5BA004255D1 /* Info.plist */,
@@ -133,7 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F16C794A2567E5B9004255D1 /* ViewController.swift in Sources */,
+				F16C794A2567E5B9004255D1 /* AuthViewController.swift in Sources */,
+				F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */,
 				F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */,
 				F16C79482567E5B9004255D1 /* SceneDelegate.swift in Sources */,
 			);
