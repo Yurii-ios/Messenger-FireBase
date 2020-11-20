@@ -9,20 +9,23 @@ import UIKit
 import SwiftUI
 
 class AuthViewController: UIViewController {
-
+    
+    let goodleLabel = UILabel(
+    
     let emailButton = UIButton(title: "Email",
-                            titleColor: .black,
-                            backgroundColor: .white,
-                            font: UIFont.avenir20(),
-                            isShadow: true,
-                            cornerRadius: 4)
-   
+                               titleColor: .white,
+                               backgroundColor: .buttonBlack(),
+                               isShadow: false)
+    
     let loginButton = UIButton(title: "Login",
-                               titleColor: .red,
-                               backgroundColor: <#T##UIColor#>,
-                               font: <#T##UIFont?#>,
-                               isShadow: <#T##Bool#>,
-                               cornerRadius: <#T##CGFloat#>)
+                               titleColor: .buttonRed(),
+                               backgroundColor: .white,
+                               isShadow: true)
+    
+    let googleButton = UIButton(title: "Google",
+                                titleColor: .black,
+                                backgroundColor: .white,
+                                isShadow: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +38,7 @@ struct ViewControllerProvider: PreviewProvider {
     static var previews: some View {
         ContainerView().edgesIgnoringSafeArea(.all)
     }
-   
+    
     struct ContainerView: UIViewControllerRepresentable {
         let viewController = AuthViewController()
         func makeUIViewController(context: Context) -> AuthViewController {
