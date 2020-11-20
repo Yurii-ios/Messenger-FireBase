@@ -18,6 +18,7 @@
 		F16C7969256816B1004255D1 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C7968256816B1004255D1 /* UILabel+Extension.swift */; };
 		F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C796B25681A07004255D1 /* UIImageView+Extension.swift */; };
 		F194E9012568488F0050AA61 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194E9002568488F0050AA61 /* ButtonFormView.swift */; };
+		F194E9042568618D0050AA61 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194E9032568618D0050AA61 /* UIStackView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F16C7968256816B1004255D1 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		F16C796B25681A07004255D1 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F194E9002568488F0050AA61 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
+		F194E9032568618D0050AA61 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				F16C796525680A12004255D1 /* UIColor+Extension.swift */,
 				F16C7968256816B1004255D1 /* UILabel+Extension.swift */,
 				F16C796B25681A07004255D1 /* UIImageView+Extension.swift */,
+				F194E9032568618D0050AA61 /* UIStackView+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				F16C794A2567E5B9004255D1 /* AuthViewController.swift in Sources */,
 				F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */,
 				F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */,
+				F194E9042568618D0050AA61 /* UIStackView+Extension.swift in Sources */,
 				F194E9012568488F0050AA61 /* ButtonFormView.swift in Sources */,
 				F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */,
 				F16C7969256816B1004255D1 /* UILabel+Extension.swift in Sources */,

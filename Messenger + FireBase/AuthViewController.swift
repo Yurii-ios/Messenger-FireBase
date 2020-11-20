@@ -51,6 +51,7 @@ class AuthViewController: UIViewController {
         stackView.axis = .vertical
         stackView.spacing = 40
         
+        
         view.addSubview(logoImageView)
         view.addSubview(stackView)
         
