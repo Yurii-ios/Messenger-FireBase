@@ -13,6 +13,7 @@
 		F16C794F2567E5BA004255D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16C794E2567E5BA004255D1 /* Assets.xcassets */; };
 		F16C79522567E5BA004255D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16C79502567E5BA004255D1 /* LaunchScreen.storyboard */; };
 		F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C795F256800FD004255D1 /* UIButton+Extension.swift */; };
+		F16C796325680763004255D1 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C796225680763004255D1 /* UIFont+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F16C79512567E5BA004255D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F16C79532567E5BA004255D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F16C795F256800FD004255D1 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		F16C796225680763004255D1 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				F16C79472567E5B9004255D1 /* SceneDelegate.swift */,
 				F16C79492567E5B9004255D1 /* AuthViewController.swift */,
 				F16C795F256800FD004255D1 /* UIButton+Extension.swift */,
+				F16C796225680763004255D1 /* UIFont+Extension.swift */,
 				F16C794E2567E5BA004255D1 /* Assets.xcassets */,
 				F16C79502567E5BA004255D1 /* LaunchScreen.storyboard */,
 				F16C79532567E5BA004255D1 /* Info.plist */,
@@ -139,6 +142,7 @@
 				F16C794A2567E5B9004255D1 /* AuthViewController.swift in Sources */,
 				F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */,
 				F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */,
+				F16C796325680763004255D1 /* UIFont+Extension.swift in Sources */,
 				F16C79482567E5B9004255D1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,13 @@ import SwiftUI
 
 class AuthViewController: UIViewController {
 
+    let myButton = UIButton(title: "Email",
+                            titleColor: .black,
+                            backgroundColor: .white,
+                            font: <#T##UIFont?#>,
+                            isShadow: <#T##Bool#>,
+                            cornerRadius: <#T##CGFloat#>)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
