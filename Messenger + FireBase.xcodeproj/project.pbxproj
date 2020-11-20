@@ -16,6 +16,7 @@
 		F16C796325680763004255D1 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C796225680763004255D1 /* UIFont+Extension.swift */; };
 		F16C796625680A12004255D1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C796525680A12004255D1 /* UIColor+Extension.swift */; };
 		F16C7969256816B1004255D1 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C7968256816B1004255D1 /* UILabel+Extension.swift */; };
+		F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C796B25681A07004255D1 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F16C796225680763004255D1 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		F16C796525680A12004255D1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F16C7968256816B1004255D1 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		F16C796B25681A07004255D1 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				F16C796225680763004255D1 /* UIFont+Extension.swift */,
 				F16C796525680A12004255D1 /* UIColor+Extension.swift */,
 				F16C7968256816B1004255D1 /* UILabel+Extension.swift */,
+				F16C796B25681A07004255D1 /* UIImageView+Extension.swift */,
 				F16C794E2567E5BA004255D1 /* Assets.xcassets */,
 				F16C79502567E5BA004255D1 /* LaunchScreen.storyboard */,
 				F16C79532567E5BA004255D1 /* Info.plist */,
@@ -148,6 +151,7 @@
 				F16C794A2567E5B9004255D1 /* AuthViewController.swift in Sources */,
 				F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */,
 				F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */,
+				F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */,
 				F16C7969256816B1004255D1 /* UILabel+Extension.swift in Sources */,
 				F16C796625680A12004255D1 /* UIColor+Extension.swift in Sources */,
 				F16C796325680763004255D1 /* UIFont+Extension.swift in Sources */,

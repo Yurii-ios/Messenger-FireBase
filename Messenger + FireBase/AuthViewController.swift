@@ -9,9 +9,15 @@ import UIKit
 import SwiftUI
 
 class AuthViewController: UIViewController {
+//MARK: - Image
+    let logoImageView = UIImageView(
+   
+//MARK: - Labels
+    let goodleLabel = UILabel(text: "Get started with")
+    let emailLabel = UILabel(text: "Or sing up with")
+    let alreadyOnboardLabel = UILabel(text: "Already onboard?")
     
-    let goodleLabel = UILabel(
-    
+//MARK: - Buttons
     let emailButton = UIButton(title: "Email",
                                titleColor: .white,
                                backgroundColor: .buttonBlack(),
