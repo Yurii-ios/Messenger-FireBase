@@ -10,12 +10,19 @@ import SwiftUI
 
 class AuthViewController: UIViewController {
 
-    let myButton = UIButton(title: "Email",
+    let emailButton = UIButton(title: "Email",
                             titleColor: .black,
                             backgroundColor: .white,
-                            font: <#T##UIFont?#>,
-                            isShadow: <#T##Bool#>,
-                            cornerRadius: <#T##CGFloat#>)
+                            font: UIFont.avenir20(),
+                            isShadow: true,
+                            cornerRadius: 4)
+   
+    let loginButton = UIButton(title: "Login",
+                               titleColor: .red,
+                               backgroundColor: <#T##UIColor#>,
+                               font: <#T##UIFont?#>,
+                               isShadow: <#T##Bool#>,
+                               cornerRadius: <#T##CGFloat#>)
     
     override func viewDidLoad() {
         super.viewDidLoad()
