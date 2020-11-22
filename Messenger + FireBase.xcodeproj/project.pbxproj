@@ -17,6 +17,8 @@
 		F16C796625680A12004255D1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C796525680A12004255D1 /* UIColor+Extension.swift */; };
 		F16C7969256816B1004255D1 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C7968256816B1004255D1 /* UILabel+Extension.swift */; };
 		F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C796B25681A07004255D1 /* UIImageView+Extension.swift */; };
+		F18308AE256944C9007BC3EC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18308AD256944C9007BC3EC /* SignUpViewController.swift */; };
+		F18308B1256955E3007BC3EC /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18308B0256955E3007BC3EC /* OneLineTextField.swift */; };
 		F194E9012568488F0050AA61 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194E9002568488F0050AA61 /* ButtonFormView.swift */; };
 		F194E9042568618D0050AA61 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194E9032568618D0050AA61 /* UIStackView+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		F16C796525680A12004255D1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F16C7968256816B1004255D1 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		F16C796B25681A07004255D1 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		F18308AD256944C9007BC3EC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F18308B0256955E3007BC3EC /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		F194E9002568488F0050AA61 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		F194E9032568618D0050AA61 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +75,8 @@
 				F16C79452567E5B9004255D1 /* AppDelegate.swift */,
 				F16C79472567E5B9004255D1 /* SceneDelegate.swift */,
 				F16C79492567E5B9004255D1 /* AuthViewController.swift */,
+				F18308AD256944C9007BC3EC /* SignUpViewController.swift */,
+				F18308B0256955E3007BC3EC /* OneLineTextField.swift */,
 				F194E9002568488F0050AA61 /* ButtonFormView.swift */,
 				F16C797125681D14004255D1 /* Extension */,
 				F16C794E2567E5BA004255D1 /* Assets.xcassets */,
@@ -170,6 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18308B1256955E3007BC3EC /* OneLineTextField.swift in Sources */,
+				F18308AE256944C9007BC3EC /* SignUpViewController.swift in Sources */,
 				F16C794A2567E5B9004255D1 /* AuthViewController.swift in Sources */,
 				F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */,
 				F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */,
