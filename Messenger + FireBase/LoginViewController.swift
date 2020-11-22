@@ -39,6 +39,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // dobawliaem logo google w lewyjy 4ast knopki
+        googleButton.customizeGoogleButton()
+        
         view.backgroundColor = .white
         setupConstraints()
     }

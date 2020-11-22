@@ -19,6 +19,7 @@
 		F17E509E256A9B620045231D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E509D256A9B620045231D /* LoginViewController.swift */; };
 		F17E50A1256AC6460045231D /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E50A0256AC6460045231D /* SetupProfileViewController.swift */; };
 		F17E50A6256ACE680045231D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E50A5256ACE680045231D /* AuthViewController.swift */; };
+		F17E50AA256ACF2A0045231D /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E50A9256ACF2A0045231D /* AddPhotoView.swift */; };
 		F18308AE256944C9007BC3EC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18308AD256944C9007BC3EC /* SignUpViewController.swift */; };
 		F18308B1256955E3007BC3EC /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18308B0256955E3007BC3EC /* OneLineTextField.swift */; };
 		F194E9012568488F0050AA61 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194E9002568488F0050AA61 /* ButtonFormView.swift */; };
@@ -40,6 +41,7 @@
 		F17E509D256A9B620045231D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F17E50A0256AC6460045231D /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		F17E50A5256ACE680045231D /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		F17E50A9256ACF2A0045231D /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		F18308AD256944C9007BC3EC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F18308B0256955E3007BC3EC /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		F194E9002568488F0050AA61 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		F16C797125681D14004255D1 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F17E50A9256ACF2A0045231D /* AddPhotoView.swift */,
 				F194E9002568488F0050AA61 /* ButtonFormView.swift */,
 				F18308B0256955E3007BC3EC /* OneLineTextField.swift */,
 				F16C796F25681CEA004255D1 /* UIKit */,
@@ -189,6 +192,7 @@
 				F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */,
 				F194E9042568618D0050AA61 /* UIStackView+Extension.swift in Sources */,
 				F194E9012568488F0050AA61 /* ButtonFormView.swift in Sources */,
+				F17E50AA256ACF2A0045231D /* AddPhotoView.swift in Sources */,
 				F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */,
 				F16C7969256816B1004255D1 /* UILabel+Extension.swift in Sources */,
 				F16C796625680A12004255D1 /* UIColor+Extension.swift in Sources */,

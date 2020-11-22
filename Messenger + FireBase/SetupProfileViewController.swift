@@ -10,9 +10,25 @@ import SwiftUI
 
 class SetupProfileViewController: UIViewController {
     
+    let fillImageView = AddPhotoView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupConstraints()
+    }
+}
+
+//MARK: - Setup Constraints
+extension SetupProfileViewController {
+    
+    private func setupConstraints() {
+        view.addSubview(fillImageView)
+        
+        fillImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        fillImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160).isActive = true
+        fillImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
 }
 
