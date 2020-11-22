@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79452567E5B9004255D1 /* AppDelegate.swift */; };
 		F16C79482567E5B9004255D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79472567E5B9004255D1 /* SceneDelegate.swift */; };
-		F16C794A2567E5B9004255D1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79492567E5B9004255D1 /* AuthViewController.swift */; };
 		F16C794F2567E5BA004255D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16C794E2567E5BA004255D1 /* Assets.xcassets */; };
 		F16C79522567E5BA004255D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16C79502567E5BA004255D1 /* LaunchScreen.storyboard */; };
 		F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C795F256800FD004255D1 /* UIButton+Extension.swift */; };
@@ -19,6 +18,7 @@
 		F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C796B25681A07004255D1 /* UIImageView+Extension.swift */; };
 		F17E509E256A9B620045231D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E509D256A9B620045231D /* LoginViewController.swift */; };
 		F17E50A1256AC6460045231D /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E50A0256AC6460045231D /* SetupProfileViewController.swift */; };
+		F17E50A6256ACE680045231D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E50A5256ACE680045231D /* AuthViewController.swift */; };
 		F18308AE256944C9007BC3EC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18308AD256944C9007BC3EC /* SignUpViewController.swift */; };
 		F18308B1256955E3007BC3EC /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18308B0256955E3007BC3EC /* OneLineTextField.swift */; };
 		F194E9012568488F0050AA61 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194E9002568488F0050AA61 /* ButtonFormView.swift */; };
@@ -29,7 +29,6 @@
 		F16C79422567E5B9004255D1 /* Messenger + FireBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Messenger + FireBase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16C79452567E5B9004255D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F16C79472567E5B9004255D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F16C79492567E5B9004255D1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F16C794E2567E5BA004255D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F16C79512567E5BA004255D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F16C79532567E5BA004255D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		F16C796B25681A07004255D1 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F17E509D256A9B620045231D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F17E50A0256AC6460045231D /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
+		F17E50A5256ACE680045231D /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F18308AD256944C9007BC3EC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F18308B0256955E3007BC3EC /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		F194E9002568488F0050AA61 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			children = (
 				F16C79452567E5B9004255D1 /* AppDelegate.swift */,
 				F16C79472567E5B9004255D1 /* SceneDelegate.swift */,
-				F16C79492567E5B9004255D1 /* AuthViewController.swift */,
+				F17E50A5256ACE680045231D /* AuthViewController.swift */,
 				F18308AD256944C9007BC3EC /* SignUpViewController.swift */,
 				F17E509D256A9B620045231D /* LoginViewController.swift */,
 				F17E50A0256AC6460045231D /* SetupProfileViewController.swift */,
@@ -184,7 +184,6 @@
 			files = (
 				F18308B1256955E3007BC3EC /* OneLineTextField.swift in Sources */,
 				F18308AE256944C9007BC3EC /* SignUpViewController.swift in Sources */,
-				F16C794A2567E5B9004255D1 /* AuthViewController.swift in Sources */,
 				F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */,
 				F17E50A1256AC6460045231D /* SetupProfileViewController.swift in Sources */,
 				F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */,
@@ -193,6 +192,7 @@
 				F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */,
 				F16C7969256816B1004255D1 /* UILabel+Extension.swift in Sources */,
 				F16C796625680A12004255D1 /* UIColor+Extension.swift in Sources */,
+				F17E50A6256ACE680045231D /* AuthViewController.swift in Sources */,
 				F16C796325680763004255D1 /* UIFont+Extension.swift in Sources */,
 				F17E509E256A9B620045231D /* LoginViewController.swift in Sources */,
 				F16C79482567E5B9004255D1 /* SceneDelegate.swift in Sources */,
