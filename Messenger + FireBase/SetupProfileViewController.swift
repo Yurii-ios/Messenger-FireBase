@@ -10,7 +10,24 @@ import SwiftUI
 
 class SetupProfileViewController: UIViewController {
     
-    let fillImageView = AddPhotoView()
+    let fullImageView = AddPhotoView()
+    
+    //MARK: - Labels
+    let welcomeLabel = UILabel(text: "Set up profile", font: UIFont.avenir26())
+    
+    let fullNameLabel = UILabel(text: "Full name")
+    let aboutMeLabel = UILabel(text: "About me")
+    let sexLabel = UILabel(text: "Sex")
+    
+    //MARK: - Text Fields
+    let fullNameTextField = OneLineTextField(font: UIFont.avenir20())
+    let aboutMeTextField = OneLineTextField(font: UIFont.avenir20())
+    
+    //MARK: - Segment control
+    let sexSegmentedControll = UISegmentedControl(first: "Male", second: "Female")
+    
+    //MARK: - Button
+    let goToChatsButton = UIButton(title: "Go to chats!", titleColor: .white, backgroundColor: .buttonBlack(), cornerRadius: 4)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +40,31 @@ class SetupProfileViewController: UIViewController {
 extension SetupProfileViewController {
     
     private func setupConstraints() {
-        view.addSubview(fillImageView)
+        let fullNameStackView = UIStackView(arrangedSubviews: [ fullNameLabel, fullNameTextField], axis: .vertical, spacing: 0)
+        let aboutMeStackView = UIStackView(arrangedSubviews: [aboutMeLabel, aboutMeTextField], axis: .vertical, spacing: 0)
+        let sexStackView = UIStackView(arrangedSubviews: [sexLabel, sexSegmentedControll], axis: .vertical, spacing: 5)
         
-        fillImageView.translatesAutoresizingMaskIntoConstraints = false
+        goToChatsButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        let stackView = UIStackView(arrangedSubviews: [fullNameStackView, aboutMeStackView, sexStackView, goToChatsButton], axis: .vertical, spacing: 40)
         
-        fillImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160).isActive = true
-        fillImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
+        fullImageView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(welcomeLabel)
+        view.addSubview(fullImageView)
+        view.addSubview(stackView)
+        
+        welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 160).isActive = true
+        welcomeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        fullImageView.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 40).isActive = true
+        fullImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        stackView.topAnchor.constraint(equalTo: fullImageView.bottomAnchor, constant: 40).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+        
     }
 }
 
