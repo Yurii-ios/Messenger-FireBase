@@ -16,6 +16,15 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         
         setupCollectionView()
+        setupSearchBar()
+    }
+    
+    private func setupSearchBar() {
+        // izmeniaem cwet navigationBar
+        navigationController?.navigationBar.barTintColor = .mainWhite()
+        // navBar vizyalno propadaet iz wida
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
     }
     
     private func setupCollectionView() {
