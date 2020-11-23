@@ -25,6 +25,14 @@ class ListViewController: UIViewController {
         // navBar vizyalno propadaet iz wida
         navigationController?.navigationBar.shadowImage = UIImage()
         
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        //должна ли панель навигации быть скрыта при поиске
+        searchController.hidesNavigationBarDuringPresentation = false
+        //скрыто ли основное содержимое во время поиска.
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
     }
     
     private func setupCollectionView() {
@@ -49,6 +57,14 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = .blue
         return cell
+    }
+}
+
+//MARK: - UISearchBarDelegate
+extension ListViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
     }
 }
 
