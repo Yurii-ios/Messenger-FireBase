@@ -21,7 +21,7 @@ class ListViewController: UIViewController {
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -51,10 +51,10 @@ struct ListViewControllerProvider: PreviewProvider {
     
     struct ContainerView: UIViewControllerRepresentable {
         
-        let listViewController = ListViewController()
+        let mainViewController = MainTabBarController()
         
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ListViewControllerProvider.ContainerView>) -> ListViewController {
-            return listViewController
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ListViewControllerProvider.ContainerView>) -> MainTabBarController {
+            return mainViewController
         }
         func updateUIViewController(_ uiViewController: ListViewControllerProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ListViewControllerProvider.ContainerView>) {
             

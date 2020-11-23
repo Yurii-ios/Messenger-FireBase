@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class PeopleViewController: UIViewController {
     
@@ -13,5 +14,24 @@ class PeopleViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .brown
+    }
+}
+
+//MARK: - SwiftUI
+struct PeopleViewControllerProvider: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        
+        let mainViewController = MainTabBarController()
+        
+        func makeUIViewController(context: UIViewControllerRepresentableContext<PeopleViewControllerProvider.ContainerView>) -> MainTabBarController {
+            return mainViewController
+        }
+        func updateUIViewController(_ uiViewController: PeopleViewControllerProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<PeopleViewControllerProvider.ContainerView>) {
+            
+        }
     }
 }
