@@ -25,6 +25,13 @@ struct MChat: Hashable {
 
 class ListViewController: UIViewController {
     
+    let activeChats: [MChat] = [
+        MChat(userName: "Yurii", userImage: UIImage(named: "human1")!, lastMessage: "Hello"),
+        MChat(userName: "Max", userImage: UIImage(named: "human2")!, lastMessage: "hello Yurii"),
+        MChat(userName: "Irina", userImage: UIImage(named: "human3")!, lastMessage: "hello Yurii"),
+        MChat(userName: "Maxim", userImage: UIImage(named: "human4")!, lastMessage: "hello Yurii")
+    ]
+    
     var collectionView: UICollectionView!
     
     enum Section: Int, CaseIterable {
@@ -37,6 +44,9 @@ class ListViewController: UIViewController {
         
         setupCollectionView()
         setupSearchBar()
+        createDataSourse()
+        reloadData()
+        
     }
     
     private func setupSearchBar() {
@@ -64,7 +74,26 @@ class ListViewController: UIViewController {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
     }
     
+    private func createDataSourse() {
+        dataSource = UICollectionViewDiffableDataSource<Section, MChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
+            // dostaem ja4ejky
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknon Section")}
+            
+            switch section {
+            case .activeChats:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+                cell.backgroundColor = .red
+                return cell
+            }
+        })
+    }
     
+    private func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, MChat>()
+        snapshot.appendSections([.activeChats])
+        snapshot.appendItems(activeChats,toSection: .activeChats)
+        dataSource?.apply(snapshot, animatingDifferences: true)
+    }
     
     private func createCompositionLayout() -> UICollectionViewLayout {
         
