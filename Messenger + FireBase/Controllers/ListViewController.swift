@@ -8,9 +8,29 @@
 import UIKit
 import SwiftUI
 
+struct MChat: Hashable {
+    var userName: String
+    var userImage: UIImage
+    var lastMessage: String
+    var id = UUID()
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: MChat, rhs: MChat) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 class ListViewController: UIViewController {
     
     var collectionView: UICollectionView!
+    
+    enum Section: Int, CaseIterable {
+        case activeChats
+    }
+    var dataSource: UICollectionViewDiffableDataSource<Section, MChat>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +62,9 @@ class ListViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-       
-        collectionView.delegate = self
-        collectionView.dataSource = self
     }
+    
+    
     
     private func createCompositionLayout() -> UICollectionViewLayout {
         
