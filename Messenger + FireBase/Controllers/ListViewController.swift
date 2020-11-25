@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 struct MChat: Hashable {
-    var userName: String
+    var username: String
     var userImage: UIImage
     var lastMessage: String
     var id = UUID()
@@ -26,10 +26,10 @@ struct MChat: Hashable {
 class ListViewController: UIViewController {
     
     let activeChats: [MChat] = [
-        MChat(userName: "Yurii", userImage: UIImage(named: "human1")!, lastMessage: "Hello"),
-        MChat(userName: "Max", userImage: UIImage(named: "human2")!, lastMessage: "hello Yurii"),
-        MChat(userName: "Irina", userImage: UIImage(named: "human3")!, lastMessage: "hello Yurii"),
-        MChat(userName: "Maxim", userImage: UIImage(named: "human4")!, lastMessage: "hello Yurii")
+        MChat(username: "Yurii", userImage: UIImage(named: "human1")!, lastMessage: "Hello"),
+        MChat(username: "Max", userImage: UIImage(named: "human2")!, lastMessage: "hello Yurii"),
+        MChat(username: "Irina", userImage: UIImage(named: "human3")!, lastMessage: "hello Yurii"),
+        MChat(username: "Maxim", userImage: UIImage(named: "human4")!, lastMessage: "hello Yurii")
     ]
     
     var collectionView: UICollectionView!
