@@ -8,11 +8,11 @@
 import UIKit
 import SwiftUI
 
-struct MChat: Hashable {
+struct MChat: Hashable, Decodable {
     var username: String
-    var userImage: UIImage
+    var userImageString: String
     var lastMessage: String
-    var id = UUID()
+    var id: Int
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
@@ -25,16 +25,13 @@ struct MChat: Hashable {
 
 class ListViewController: UIViewController {
     
-    let activeChats: [MChat] = [
-        MChat(username: "Yurii", userImage: UIImage(named: "human1")!, lastMessage: "Hello"),
-        MChat(username: "Max", userImage: UIImage(named: "human2")!, lastMessage: "hello Yurii"),
-        MChat(username: "Irina", userImage: UIImage(named: "human3")!, lastMessage: "hello Yurii"),
-        MChat(username: "Maxim", userImage: UIImage(named: "human4")!, lastMessage: "hello Yurii")
-    ]
+    let activeChats = Bundle.main.decode([MChat].self, from: "activeChats.json")
+    let waitingChats = Bundle.main.decode([MChat].self, from: "waitingChats.json")
     
     var collectionView: UICollectionView!
     
     enum Section: Int, CaseIterable {
+        case waitingChats
         case activeChats
     }
     var dataSource: UICollectionViewDiffableDataSource<Section, MChat>?
@@ -71,8 +68,22 @@ class ListViewController: UIViewController {
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "activeChatsCell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "waitingChatsCell")
     }
+    
+    private func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, MChat>()
+        snapshot.appendSections([.waitingChats])
+        snapshot.appendSections([.activeChats])
+        snapshot.appendItems(waitingChats,toSection: .waitingChats)
+        snapshot.appendItems(activeChats,toSection: .activeChats)
+        dataSource?.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+//MARK: - Data Source
+extension ListViewController {
     
     private func createDataSourse() {
         dataSource = UICollectionViewDiffableDataSource<Section, MChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
@@ -81,39 +92,69 @@ class ListViewController: UIViewController {
             
             switch section {
             case .activeChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "activeChatsCell", for: indexPath)
                 cell.backgroundColor = .red
+                return cell
+                
+            case .waitingChats:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "waitingChatsCell", for: indexPath)
+                cell.backgroundColor = .systemBlue
                 return cell
             }
         })
     }
+}
+
+//MARK: - Setup Layout
+extension ListViewController {
     
-    private func reloadData() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, MChat>()
-        snapshot.appendSections([.activeChats])
-        snapshot.appendItems(activeChats,toSection: .activeChats)
-        dataSource?.apply(snapshot, animatingDifferences: true)
-    }
     
     private func createCompositionLayout() -> UICollectionViewLayout {
         
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            //section -> groups -> items -> size
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            guard let section = Section(rawValue: sectionIndex) else { fatalError("uncnown Section")}
             
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(84))
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0)
-            
-            let section = NSCollectionLayoutSection(group: group)
-            // razmer sekcii
-            section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 0, trailing: 20)
-            return section
+            switch section {
+            case .activeChats:
+                return self.createActiveChats()
+            case .waitingChats:
+                return self.createWaitingChats()
+            }
         }
         return layout
     }
+    
+    private func createWaitingChats() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(88), heightDimension: .absolute(78))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 0, trailing: 20)
+        section.interGroupSpacing = 19
+        section.orthogonalScrollingBehavior = .continuous
+        return section
+    }
+    
+    private func createActiveChats() -> NSCollectionLayoutSection {
+        //section -> groups -> items -> size
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(84))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+       // group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 8
+        // razmer sekcii
+        section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 0, trailing: 20)
+        return section
+    }
 }
+
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
