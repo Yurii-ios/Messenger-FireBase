@@ -10,6 +10,7 @@
 		F14611F0256EE45E00A8B0D8 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611EF256EE45E00A8B0D8 /* activeChats.json */; };
 		F14611F3256EE46700A8B0D8 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611F2256EE46700A8B0D8 /* waitingChats.json */; };
 		F14611F6256EE52200A8B0D8 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */; };
+		F14611FA256EF76000A8B0D8 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14611F9256EF76000A8B0D8 /* ActiveChatCell.swift */; };
 		F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79452567E5B9004255D1 /* AppDelegate.swift */; };
 		F16C79482567E5B9004255D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79472567E5B9004255D1 /* SceneDelegate.swift */; };
 		F16C794F2567E5BA004255D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16C794E2567E5BA004255D1 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		F14611EF256EE45E00A8B0D8 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		F14611F2256EE46700A8B0D8 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		F14611F9256EF76000A8B0D8 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		F16C79422567E5B9004255D1 /* Messenger + FireBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Messenger + FireBase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16C79452567E5B9004255D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F16C79472567E5B9004255D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F14611F8256EF74000A8B0D8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F14611F9256EF76000A8B0D8 /* ActiveChatCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F16C79392567E5B9004255D1 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +156,7 @@
 		F1BBB754256C4BF500EB3EC6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F14611F8256EF74000A8B0D8 /* Cell */,
 				F1BBB756256C4C3000EB3EC6 /* MainTabBarController.swift */,
 				F1BBB750256C387700EB3EC6 /* ListViewController.swift */,
 				F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */,
@@ -228,6 +239,7 @@
 				F17E50AE256AF5F00045231D /* SegmentedControl+Extension.swift in Sources */,
 				F1BBB757256C4C3000EB3EC6 /* MainTabBarController.swift in Sources */,
 				F18308B1256955E3007BC3EC /* OneLineTextField.swift in Sources */,
+				F14611FA256EF76000A8B0D8 /* ActiveChatCell.swift in Sources */,
 				F18308AE256944C9007BC3EC /* SignUpViewController.swift in Sources */,
 				F1BBB75A256C4F0500EB3EC6 /* PeopleViewController.swift in Sources */,
 				F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */,
