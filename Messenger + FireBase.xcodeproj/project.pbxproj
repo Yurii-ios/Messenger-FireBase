@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F14611F0256EE45E00A8B0D8 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611EF256EE45E00A8B0D8 /* activeChats.json */; };
+		F14611F3256EE46700A8B0D8 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611F2256EE46700A8B0D8 /* waitingChats.json */; };
 		F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79452567E5B9004255D1 /* AppDelegate.swift */; };
 		F16C79482567E5B9004255D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79472567E5B9004255D1 /* SceneDelegate.swift */; };
 		F16C794F2567E5BA004255D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16C794E2567E5BA004255D1 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F14611EF256EE45E00A8B0D8 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
+		F14611F2256EE46700A8B0D8 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		F16C79422567E5B9004255D1 /* Messenger + FireBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Messenger + FireBase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16C79452567E5B9004255D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F16C79472567E5B9004255D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 				F16C796B25681A07004255D1 /* UIImageView+Extension.swift */,
 				F194E9032568618D0050AA61 /* UIStackView+Extension.swift */,
 				F17E50AD256AF5F00045231D /* SegmentedControl+Extension.swift */,
+				F14611EF256EE45E00A8B0D8 /* activeChats.json */,
+				F14611F2256EE46700A8B0D8 /* waitingChats.json */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -202,7 +208,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F16C79522567E5BA004255D1 /* LaunchScreen.storyboard in Resources */,
+				F14611F0256EE45E00A8B0D8 /* activeChats.json in Resources */,
 				F16C794F2567E5BA004255D1 /* Assets.xcassets in Resources */,
+				F14611F3256EE46700A8B0D8 /* waitingChats.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

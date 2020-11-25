@@ -77,7 +77,7 @@ class ListViewController: UIViewController {
     private func createDataSourse() {
         dataSource = UICollectionViewDiffableDataSource<Section, MChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
             // dostaem ja4ejky
-            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknon Section")}
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown Section")}
             
             switch section {
             case .activeChats:
