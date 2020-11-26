@@ -19,7 +19,7 @@ class ActiveChatCell: UICollectionViewCell,SelfConfiguringCell {
     let friendImageView = UIImageView()
     let friendName = UILabel(text: "User name", font: UIFont.laoSangamMN20())
     let lastMessage = UILabel(text: "Hello", font: UIFont.laoSangamMN18())
-    let gradientView = UIView()
+    let gradientView = GradientView(from: .topTrailing, to: .bottomLeading, startColor: #colorLiteral(red: 0.7882352941, green: 0.631372549, blue: 1, alpha: 1), endColor: #colorLiteral(red: 0.4784313725, green: 0.6980392157, blue: 1, alpha: 1))
     
     func configure(with value: MChat) {
         friendImageView.image = UIImage(named: value.userImageString)

@@ -45,11 +45,50 @@ class GradientView: UIView {
             }
         }
     }
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    
+   @IBInspectable private var startColor: UIColor? {
+        didSet {
+            setupGradientColors(startColor: startColor, endColor: endColor)
+        }
     }
     
+   @IBInspectable private var endColor: UIColor? {
+        didSet {
+            setupGradientColors(startColor: startColor, endColor: endColor)
+        }
+    }
+    
+    init(from: Point, to: Point, startColor: UIColor?, endColor: UIColor?) {
+        self.init()
+        setupGradient(from: from, to: to, startColor: startColor, endColor: endColor)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+    }
+    //zadaem razmeru gradientLayer
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradientLayer.frame = bounds
+    }
+    private func setupGradient(from: Point, to: Point, startColor: UIColor?, endColor: UIColor?) {
+        self.layer.addSublayer(gradientLayer)
+        setupGradientColors(startColor: startColor, endColor: endColor)
+        // zadaem pozicui dlia 1 i 2 cweta
+        gradientLayer.startPoint = from.point
+        gradientLayer.endPoint = to.point
+    }
+    
+    private func setupGradientColors(startColor: UIColor?, endColor: UIColor?) {
+        if let startColor = startColor, let endColor = endColor {
+            gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        }
+    }
+    
+    // coder otwe4aet za wzaemodejstwie z interfejs buldier
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        setupGradient(from: .leading, to: .trailing, startColor: startColor, endColor: endColor)
     }
 }
