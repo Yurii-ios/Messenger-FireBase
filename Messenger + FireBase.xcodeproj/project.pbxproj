@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F11BAA292570220E002D7601 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA282570220E002D7601 /* GradientView.swift */; };
 		F11BAA2C25704311002D7601 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA2B25704311002D7601 /* WaitingChatCell.swift */; };
+		F11BAA2F257049C8002D7601 /* SelfConfigurationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA2E257049C8002D7601 /* SelfConfigurationCell.swift */; };
 		F14611F0256EE45E00A8B0D8 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611EF256EE45E00A8B0D8 /* activeChats.json */; };
 		F14611F3256EE46700A8B0D8 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611F2256EE46700A8B0D8 /* waitingChats.json */; };
 		F14611F6256EE52200A8B0D8 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		F11BAA282570220E002D7601 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F11BAA2B25704311002D7601 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
+		F11BAA2E257049C8002D7601 /* SelfConfigurationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfigurationCell.swift; sourceTree = "<group>"; };
 		F14611EF256EE45E00A8B0D8 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		F14611F2256EE46700A8B0D8 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F11BAA31257049F3002D7601 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F11BAA2E257049C8002D7601 /* SelfConfigurationCell.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		F14611F8256EF74000A8B0D8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 				F16C79472567E5B9004255D1 /* SceneDelegate.swift */,
 				F1BBB754256C4BF500EB3EC6 /* Controllers */,
 				F1BBB753256C4AEB00EB3EC6 /* SignIn&Auth */,
+				F11BAA31257049F3002D7601 /* Protocols */,
 				F16C797125681D14004255D1 /* Extension */,
 				F16C794E2567E5BA004255D1 /* Assets.xcassets */,
 				F16C79502567E5BA004255D1 /* LaunchScreen.storyboard */,
@@ -257,6 +268,7 @@
 				F194E9012568488F0050AA61 /* ButtonFormView.swift in Sources */,
 				F17E50AA256ACF2A0045231D /* AddPhotoView.swift in Sources */,
 				F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */,
+				F11BAA2F257049C8002D7601 /* SelfConfigurationCell.swift in Sources */,
 				F16C7969256816B1004255D1 /* UILabel+Extension.swift in Sources */,
 				F11BAA2C25704311002D7601 /* WaitingChatCell.swift in Sources */,
 				F16C796625680A12004255D1 /* UIColor+Extension.swift in Sources */,

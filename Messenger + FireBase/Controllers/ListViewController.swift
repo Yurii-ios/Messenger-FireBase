@@ -94,9 +94,7 @@ extension ListViewController {
             case .activeChats:
                 return self.configure(cellTupe: ActiveChatCell.self, with: chat, for: indexPath)
             case .waitingChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "waitingChatsCell", for: indexPath)
-                cell.backgroundColor = .systemBlue
-                return cell
+                return self.configure(cellTupe: WaitingChatCell.self, with: chat, for: indexPath)
             }
         })
     }

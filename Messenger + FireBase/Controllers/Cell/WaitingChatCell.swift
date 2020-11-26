@@ -6,21 +6,58 @@
 //
 
 import UIKit
+import SwiftUI
 
 class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     static var reuseID: String = "WaitingChatCell"
     
+    let friendImageView = UIImageView()
+    
     func configure(with value: MChat) {
-        print("123")
+        friendImageView.image = UIImage(named: value.userImageString)
     }
     
+    private func setupConstraints() {
+        friendImageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(friendImageView)
+        
+        NSLayoutConstraint.activate([
+            friendImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            friendImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            friendImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            friendImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .orange
+        
+        self.layer.cornerRadius = 4
+        self.clipsToBounds = true
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+//MARK: - SwiftUI
+struct WaitingChatCellProvider: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        
+        let mainViewController = MainTabBarController()
+        
+        func makeUIViewController(context: UIViewControllerRepresentableContext<WaitingChatCellProvider.ContainerView>) -> MainTabBarController {
+            return mainViewController
+        }
+        func updateUIViewController(_ uiViewController: WaitingChatCellProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<WaitingChatCellProvider.ContainerView>) {
+            
+        }
     }
 }
