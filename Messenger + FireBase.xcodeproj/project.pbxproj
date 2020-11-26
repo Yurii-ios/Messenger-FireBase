@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F11BAA292570220E002D7601 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA282570220E002D7601 /* GradientView.swift */; };
+		F11BAA2C25704311002D7601 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA2B25704311002D7601 /* WaitingChatCell.swift */; };
 		F14611F0256EE45E00A8B0D8 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611EF256EE45E00A8B0D8 /* activeChats.json */; };
 		F14611F3256EE46700A8B0D8 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611F2256EE46700A8B0D8 /* waitingChats.json */; };
 		F14611F6256EE52200A8B0D8 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		F11BAA282570220E002D7601 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		F11BAA2B25704311002D7601 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		F14611EF256EE45E00A8B0D8 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		F14611F2256EE46700A8B0D8 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				F14611F9256EF76000A8B0D8 /* ActiveChatCell.swift */,
+				F11BAA2B25704311002D7601 /* WaitingChatCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -139,8 +142,8 @@
 				F194E9002568488F0050AA61 /* ButtonFormView.swift */,
 				F18308B0256955E3007BC3EC /* OneLineTextField.swift */,
 				F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */,
-				F16C796F25681CEA004255D1 /* UIKit */,
 				F11BAA282570220E002D7601 /* GradientView.swift */,
+				F16C796F25681CEA004255D1 /* UIKit */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				F17E50AA256ACF2A0045231D /* AddPhotoView.swift in Sources */,
 				F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */,
 				F16C7969256816B1004255D1 /* UILabel+Extension.swift in Sources */,
+				F11BAA2C25704311002D7601 /* WaitingChatCell.swift in Sources */,
 				F16C796625680A12004255D1 /* UIColor+Extension.swift in Sources */,
 				F17E50A6256ACE680045231D /* AuthViewController.swift in Sources */,
 				F16C796325680763004255D1 /* UIFont+Extension.swift in Sources */,
