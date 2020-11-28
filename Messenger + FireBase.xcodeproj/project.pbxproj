@@ -10,6 +10,7 @@
 		F11BAA292570220E002D7601 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA282570220E002D7601 /* GradientView.swift */; };
 		F11BAA2C25704311002D7601 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA2B25704311002D7601 /* WaitingChatCell.swift */; };
 		F11BAA2F257049C8002D7601 /* SelfConfigurationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA2E257049C8002D7601 /* SelfConfigurationCell.swift */; };
+		F11BAA3525704F5D002D7601 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA3425704F5D002D7601 /* SectionHeader.swift */; };
 		F14611F0256EE45E00A8B0D8 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611EF256EE45E00A8B0D8 /* activeChats.json */; };
 		F14611F3256EE46700A8B0D8 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611F2256EE46700A8B0D8 /* waitingChats.json */; };
 		F14611F6256EE52200A8B0D8 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */; };
@@ -41,6 +42,7 @@
 		F11BAA282570220E002D7601 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F11BAA2B25704311002D7601 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		F11BAA2E257049C8002D7601 /* SelfConfigurationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfigurationCell.swift; sourceTree = "<group>"; };
+		F11BAA3425704F5D002D7601 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		F14611EF256EE45E00A8B0D8 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		F14611F2256EE46700A8B0D8 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				F14611F8256EF74000A8B0D8 /* Cell */,
 				F1BBB756256C4C3000EB3EC6 /* MainTabBarController.swift */,
 				F1BBB750256C387700EB3EC6 /* ListViewController.swift */,
+				F11BAA3425704F5D002D7601 /* SectionHeader.swift */,
 				F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */,
 			);
 			path = Controllers;
@@ -254,6 +257,7 @@
 			files = (
 				F1BBB751256C387700EB3EC6 /* ListViewController.swift in Sources */,
 				F17E50AE256AF5F00045231D /* SegmentedControl+Extension.swift in Sources */,
+				F11BAA3525704F5D002D7601 /* SectionHeader.swift in Sources */,
 				F11BAA292570220E002D7601 /* GradientView.swift in Sources */,
 				F1BBB757256C4C3000EB3EC6 /* MainTabBarController.swift in Sources */,
 				F18308B1256955E3007BC3EC /* OneLineTextField.swift in Sources */,
