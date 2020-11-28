@@ -25,7 +25,7 @@ class SectionHeader: UICollectionReusableView {
         ])
     }
     
-    func configurate(text: String, font: UIFont?, textColor: UIColor) {
+    func configure(text: String, font: UIFont?, textColor: UIColor) {
         title.text = text
         title.font = font
         title.textColor = textColor

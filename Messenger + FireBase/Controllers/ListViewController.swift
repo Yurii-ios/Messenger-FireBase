@@ -33,6 +33,15 @@ class ListViewController: UIViewController {
     enum Section: Int, CaseIterable {
         case waitingChats
         case activeChats
+        
+        func description() -> String {
+            switch self {
+            case .waitingChats:
+                return "Waiting chats"
+            case .activeChats:
+                return "Active chats"
+            }
+        }
     }
     var dataSource: UICollectionViewDiffableDataSource<Section, MChat>?
     
@@ -69,7 +78,7 @@ class ListViewController: UIViewController {
         view.addSubview(collectionView)
         
         // registriryem sekcii
-        collectionView.register(<#T##viewClass: AnyClass?##AnyClass?#>, forSupplementaryViewOfKind: <#T##String#>, withReuseIdentifier: <#T##String#>)
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
         
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseID)
         collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseID)
@@ -100,6 +109,14 @@ extension ListViewController {
                 return self.configure(cellTupe: WaitingChatCell.self, with: chat, for: indexPath)
             }
         })
+        
+        dataSource?.supplementaryViewProvider = {
+            collectionView, kind, indexPath in
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: indexPath) as? SectionHeader else { fatalError("Cannot create new section header")}
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Uknown section kind")}
+            sectionHeader.configure(text: section.description(), font: UIFont.laoSangamMN20(), textColor: #colorLiteral(red: 0.5725490196, green: 0.5725490196, blue: 0.5725490196, alpha: 1))
+            return sectionHeader
+        }
     }
     
     private func configure<T: SelfConfiguringCell>(cellTupe: T.Type, with value: MChat, for indexPath: IndexPath) -> T {
@@ -140,7 +157,18 @@ extension ListViewController {
         section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 0, trailing: 20)
         section.interGroupSpacing = 19
         section.orthogonalScrollingBehavior = .continuous
+        
+        let sectionHeader = createSectionHeader()
+            // masiw prinimajys4ij header i footer
+            section.boundarySupplementaryItems = [sectionHeader]
         return section
+    }
+    
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
+        return sectionHeader
     }
     
     private func createActiveChats() -> NSCollectionLayoutSection {
@@ -150,12 +178,16 @@ extension ListViewController {
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(84))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-       // group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0)
+        // group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0)
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 8
         // razmer sekcii
         section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 0, trailing: 20)
+        
+        let sectionHeader = createSectionHeader()
+            // masiw prinimajys4ij header i footer
+            section.boundarySupplementaryItems = [sectionHeader]
         return section
     }
 }
