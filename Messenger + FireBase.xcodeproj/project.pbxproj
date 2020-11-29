@@ -11,6 +11,9 @@
 		F11BAA2C25704311002D7601 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA2B25704311002D7601 /* WaitingChatCell.swift */; };
 		F11BAA2F257049C8002D7601 /* SelfConfigurationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA2E257049C8002D7601 /* SelfConfigurationCell.swift */; };
 		F11BAA3525704F5D002D7601 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BAA3425704F5D002D7601 /* SectionHeader.swift */; };
+		F11EE33D2572C7E700AF107B /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = F11EE33C2572C7E700AF107B /* users.json */; };
+		F11EE3412572C94C00AF107B /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11EE3402572C94C00AF107B /* MUser.swift */; };
+		F11EE3442572C96900AF107B /* MChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11EE3432572C96900AF107B /* MChat.swift */; };
 		F14611F0256EE45E00A8B0D8 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611EF256EE45E00A8B0D8 /* activeChats.json */; };
 		F14611F3256EE46700A8B0D8 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611F2256EE46700A8B0D8 /* waitingChats.json */; };
 		F14611F6256EE52200A8B0D8 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */; };
@@ -43,6 +46,9 @@
 		F11BAA2B25704311002D7601 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		F11BAA2E257049C8002D7601 /* SelfConfigurationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfigurationCell.swift; sourceTree = "<group>"; };
 		F11BAA3425704F5D002D7601 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		F11EE33C2572C7E700AF107B /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		F11EE3402572C94C00AF107B /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
+		F11EE3432572C96900AF107B /* MChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MChat.swift; sourceTree = "<group>"; };
 		F14611EF256EE45E00A8B0D8 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		F14611F2256EE46700A8B0D8 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
@@ -91,6 +97,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		F11EE3462572CD1D00AF107B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F11EE3402572C94C00AF107B /* MUser.swift */,
+				F11EE3432572C96900AF107B /* MChat.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F14611F8256EF74000A8B0D8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +136,7 @@
 			children = (
 				F16C79452567E5B9004255D1 /* AppDelegate.swift */,
 				F16C79472567E5B9004255D1 /* SceneDelegate.swift */,
+				F11EE3462572CD1D00AF107B /* Models */,
 				F1BBB754256C4BF500EB3EC6 /* Controllers */,
 				F1BBB753256C4AEB00EB3EC6 /* SignIn&Auth */,
 				F11BAA31257049F3002D7601 /* Protocols */,
@@ -144,6 +160,7 @@
 				F17E50AD256AF5F00045231D /* SegmentedControl+Extension.swift */,
 				F14611EF256EE45E00A8B0D8 /* activeChats.json */,
 				F14611F2256EE46700A8B0D8 /* waitingChats.json */,
+				F11EE33C2572C7E700AF107B /* users.json */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -175,11 +192,11 @@
 		F1BBB754256C4BF500EB3EC6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F14611F8256EF74000A8B0D8 /* Cell */,
 				F1BBB756256C4C3000EB3EC6 /* MainTabBarController.swift */,
-				F1BBB750256C387700EB3EC6 /* ListViewController.swift */,
-				F11BAA3425704F5D002D7601 /* SectionHeader.swift */,
 				F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */,
+				F1BBB750256C387700EB3EC6 /* ListViewController.swift */,
+				F14611F8256EF74000A8B0D8 /* Cell */,
+				F11BAA3425704F5D002D7601 /* SectionHeader.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F11EE33D2572C7E700AF107B /* users.json in Resources */,
 				F16C79522567E5BA004255D1 /* LaunchScreen.storyboard in Resources */,
 				F14611F0256EE45E00A8B0D8 /* activeChats.json in Resources */,
 				F16C794F2567E5BA004255D1 /* Assets.xcassets in Resources */,
@@ -255,12 +273,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F11EE3442572C96900AF107B /* MChat.swift in Sources */,
 				F1BBB751256C387700EB3EC6 /* ListViewController.swift in Sources */,
 				F17E50AE256AF5F00045231D /* SegmentedControl+Extension.swift in Sources */,
 				F11BAA3525704F5D002D7601 /* SectionHeader.swift in Sources */,
 				F11BAA292570220E002D7601 /* GradientView.swift in Sources */,
 				F1BBB757256C4C3000EB3EC6 /* MainTabBarController.swift in Sources */,
 				F18308B1256955E3007BC3EC /* OneLineTextField.swift in Sources */,
+				F11EE3412572C94C00AF107B /* MUser.swift in Sources */,
 				F14611FA256EF76000A8B0D8 /* ActiveChatCell.swift in Sources */,
 				F18308AE256944C9007BC3EC /* SignUpViewController.swift in Sources */,
 				F1BBB75A256C4F0500EB3EC6 /* PeopleViewController.swift in Sources */,
