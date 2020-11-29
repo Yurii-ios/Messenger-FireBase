@@ -1,5 +1,5 @@
 //
-//  MUser.swift
+//  MChat.swift
 //  Messenger + FireBase
 //
 //  Created by Yurii Sameliuk on 28/11/2020.
@@ -7,16 +7,17 @@
 
 import UIKit
 
-struct MUser: Hashable, Decodable {
-    var username: String 
-    var avatarStringURL: String
+struct MChat: Hashable, Decodable {
+    var username: String
+    var userImageString: String
+    var lastMessage: String
     var id: Int
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
     
-    static func == (lhs: MUser, rhs: MUser) -> Bool {
+    static func == (lhs: MChat, rhs: MChat) -> Bool {
         return lhs.id == rhs.id
     }
 }
