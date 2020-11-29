@@ -9,6 +9,10 @@ import UIKit
 import SwiftUI
 
 class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
+    func configure<U>(with value: U) where U : Hashable {
+        
+    }
+    
     static var reuseID: String = "WaitingChatCell"
     
     let friendImageView = UIImageView()

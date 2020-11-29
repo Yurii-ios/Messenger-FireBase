@@ -42,7 +42,7 @@ class PeopleViewController: UIViewController {
         
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseID)
     }
     
     private func setupSearchBar() {
@@ -119,9 +119,7 @@ extension PeopleViewController {
             guard let section = Section(rawValue: indexPath.section) else { fatalError("Uknown section kind")}
             switch section {
             case .users:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-                cell.backgroundColor = .blue
-                return cell
+                return self.configure(collectionView: collectionView, cellTupe: UserCell.self, with: user, for: indexPath)
             }
         })
         

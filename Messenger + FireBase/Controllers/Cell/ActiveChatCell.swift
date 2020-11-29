@@ -9,6 +9,11 @@ import UIKit
 import SwiftUI
 
 class ActiveChatCell: UICollectionViewCell,SelfConfiguringCell {
+    func configure<U>(with value: U) where U : Hashable {
+        
+    }
+    
+   
     static var reuseID: String = "ActiveChatCell"
     
     let friendImageView = UIImageView()

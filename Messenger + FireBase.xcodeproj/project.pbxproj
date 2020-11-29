@@ -39,6 +39,8 @@
 		F1BBB751256C387700EB3EC6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBB750256C387700EB3EC6 /* ListViewController.swift */; };
 		F1BBB757256C4C3000EB3EC6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBB756256C4C3000EB3EC6 /* MainTabBarController.swift */; };
 		F1BBB75A256C4F0500EB3EC6 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */; };
+		F1F0BA092573C888003E2FCA /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA082573C888003E2FCA /* UserCell.swift */; };
+		F1F0BA0C2573CB5D003E2FCA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA0B2573CB5D003E2FCA /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		F1BBB750256C387700EB3EC6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		F1BBB756256C4C3000EB3EC6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		F1F0BA082573C888003E2FCA /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		F1F0BA0B2573CB5D003E2FCA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			children = (
 				F14611F9256EF76000A8B0D8 /* ActiveChatCell.swift */,
 				F11BAA2B25704311002D7601 /* WaitingChatCell.swift */,
+				F1F0BA082573C888003E2FCA /* UserCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 				F14611EF256EE45E00A8B0D8 /* activeChats.json */,
 				F14611F2256EE46700A8B0D8 /* waitingChats.json */,
 				F11EE33C2572C7E700AF107B /* users.json */,
+				F1F0BA0B2573CB5D003E2FCA /* UIViewController+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				F1BBB751256C387700EB3EC6 /* ListViewController.swift in Sources */,
 				F17E50AE256AF5F00045231D /* SegmentedControl+Extension.swift in Sources */,
 				F11BAA3525704F5D002D7601 /* SectionHeader.swift in Sources */,
+				F1F0BA0C2573CB5D003E2FCA /* UIViewController+Extension.swift in Sources */,
 				F11BAA292570220E002D7601 /* GradientView.swift in Sources */,
 				F1BBB757256C4C3000EB3EC6 /* MainTabBarController.swift in Sources */,
 				F18308B1256955E3007BC3EC /* OneLineTextField.swift in Sources */,
@@ -293,6 +300,7 @@
 				F17E50AA256ACF2A0045231D /* AddPhotoView.swift in Sources */,
 				F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */,
 				F11BAA2F257049C8002D7601 /* SelfConfigurationCell.swift in Sources */,
+				F1F0BA092573C888003E2FCA /* UserCell.swift in Sources */,
 				F16C7969256816B1004255D1 /* UILabel+Extension.swift in Sources */,
 				F11BAA2C25704311002D7601 /* WaitingChatCell.swift in Sources */,
 				F16C796625680A12004255D1 /* UIColor+Extension.swift in Sources */,
