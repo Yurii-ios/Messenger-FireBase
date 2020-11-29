@@ -31,7 +31,7 @@ class PeopleViewController: UIViewController {
         view.backgroundColor = .brown
         setupCollectionView()
         createDataSource()
-        reloadData()
+        reloadData(with: nil)
     }
     
     private func setupCollectionView() {
@@ -61,10 +61,13 @@ class PeopleViewController: UIViewController {
         searchController.searchBar.delegate = self
     }
 
-    private func reloadData() {
+    private func reloadData(with searchText: String?) {
+        let filtered = users.filter { (user) -> Bool in
+            user.contains(filter: searchText)
+        }
         var snapshot = NSDiffableDataSourceSnapshot<Section, MUser>()
         snapshot.appendSections([.users])
-        snapshot.appendItems(users,toSection: .users)
+        snapshot.appendItems(filtered,toSection: .users)
         
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
@@ -138,7 +141,7 @@ extension PeopleViewController {
 //MARK: - UISearchBarDelegate
 extension PeopleViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        reloadData(with: searchText)
     }
 }
 

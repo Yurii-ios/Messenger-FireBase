@@ -41,6 +41,7 @@
 		F1BBB75A256C4F0500EB3EC6 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */; };
 		F1F0BA092573C888003E2FCA /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA082573C888003E2FCA /* UserCell.swift */; };
 		F1F0BA0C2573CB5D003E2FCA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA0B2573CB5D003E2FCA /* UIViewController+Extension.swift */; };
+		F1F0BA0F2573FACD003E2FCA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA0E2573FACD003E2FCA /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		F1F0BA082573C888003E2FCA /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		F1F0BA0B2573CB5D003E2FCA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		F1F0BA0E2573FACD003E2FCA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				F1BBB756256C4C3000EB3EC6 /* MainTabBarController.swift */,
 				F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */,
 				F1BBB750256C387700EB3EC6 /* ListViewController.swift */,
+				F1F0BA0E2573FACD003E2FCA /* ProfileViewController.swift */,
 				F14611F8256EF74000A8B0D8 /* Cell */,
 				F11BAA3425704F5D002D7601 /* SectionHeader.swift */,
 			);
@@ -291,6 +294,7 @@
 				F14611FA256EF76000A8B0D8 /* ActiveChatCell.swift in Sources */,
 				F18308AE256944C9007BC3EC /* SignUpViewController.swift in Sources */,
 				F1BBB75A256C4F0500EB3EC6 /* PeopleViewController.swift in Sources */,
+				F1F0BA0F2573FACD003E2FCA /* ProfileViewController.swift in Sources */,
 				F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */,
 				F14611F6256EE52200A8B0D8 /* Bundle-Decodable.swift in Sources */,
 				F17E50A1256AC6460045231D /* SetupProfileViewController.swift in Sources */,
