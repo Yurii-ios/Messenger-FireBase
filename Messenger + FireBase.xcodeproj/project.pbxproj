@@ -42,6 +42,8 @@
 		F1F0BA092573C888003E2FCA /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA082573C888003E2FCA /* UserCell.swift */; };
 		F1F0BA0C2573CB5D003E2FCA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA0B2573CB5D003E2FCA /* UIViewController+Extension.swift */; };
 		F1F0BA0F2573FACD003E2FCA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA0E2573FACD003E2FCA /* ProfileViewController.swift */; };
+		F1F0BA12257412AF003E2FCA /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA11257412AF003E2FCA /* InsertableTextField.swift */; };
+		F1F0BA15257424D8003E2FCA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA14257424D8003E2FCA /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		F1F0BA082573C888003E2FCA /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		F1F0BA0B2573CB5D003E2FCA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		F1F0BA0E2573FACD003E2FCA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F1F0BA11257412AF003E2FCA /* InsertableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
+		F1F0BA14257424D8003E2FCA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				F16C795F256800FD004255D1 /* UIButton+Extension.swift */,
+				F1F0BA14257424D8003E2FCA /* UIView+Extension.swift */,
 				F16C796225680763004255D1 /* UIFont+Extension.swift */,
 				F16C796525680A12004255D1 /* UIColor+Extension.swift */,
 				F16C7968256816B1004255D1 /* UILabel+Extension.swift */,
@@ -177,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				F17E50A9256ACF2A0045231D /* AddPhotoView.swift */,
+				F1F0BA11257412AF003E2FCA /* InsertableTextField.swift */,
 				F194E9002568488F0050AA61 /* ButtonFormView.swift */,
 				F18308B0256955E3007BC3EC /* OneLineTextField.swift */,
 				F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */,
@@ -292,6 +298,7 @@
 				F18308B1256955E3007BC3EC /* OneLineTextField.swift in Sources */,
 				F11EE3412572C94C00AF107B /* MUser.swift in Sources */,
 				F14611FA256EF76000A8B0D8 /* ActiveChatCell.swift in Sources */,
+				F1F0BA12257412AF003E2FCA /* InsertableTextField.swift in Sources */,
 				F18308AE256944C9007BC3EC /* SignUpViewController.swift in Sources */,
 				F1BBB75A256C4F0500EB3EC6 /* PeopleViewController.swift in Sources */,
 				F1F0BA0F2573FACD003E2FCA /* ProfileViewController.swift in Sources */,
@@ -299,6 +306,7 @@
 				F14611F6256EE52200A8B0D8 /* Bundle-Decodable.swift in Sources */,
 				F17E50A1256AC6460045231D /* SetupProfileViewController.swift in Sources */,
 				F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */,
+				F1F0BA15257424D8003E2FCA /* UIView+Extension.swift in Sources */,
 				F194E9042568618D0050AA61 /* UIStackView+Extension.swift in Sources */,
 				F194E9012568488F0050AA61 /* ButtonFormView.swift in Sources */,
 				F17E50AA256ACF2A0045231D /* AddPhotoView.swift in Sources */,
