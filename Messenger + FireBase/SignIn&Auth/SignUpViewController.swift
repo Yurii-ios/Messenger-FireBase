@@ -24,7 +24,7 @@ class SignUpViewController: UIViewController {
     
     //MARK: - Buttons
     let signUpButton = UIButton(title: "Sign Up", titleColor: .white, backgroundColor: .buttonBlack(), cornerRadius: 4)
-    let loginButton = UIButton()
+    let loginButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,31 @@ class SignUpViewController: UIViewController {
         loginButton.setTitleColor(.buttonRed(), for: .normal)
         loginButton.titleLabel?.font = UIFont.avenir20()
         setupConstraints()
+        view.backgroundColor = .mainWhite()
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func signUpButtonTapped() {
+        print(#function)
+        AuthService.shared.register(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text) { (result) in
+            
+            switch result {
+            case .success(let user):
+                self.showAlert(with: "Success", and: "Logined")
+                print(user.email)
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        }
+    }
+}
+
+extension UIViewController {
+    func showAlert(with Title: String, and message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(actionButton)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -58,7 +83,7 @@ extension SignUpViewController {
         view.addSubview(welcomeLabel)
         view.addSubview(stackView)
         view.addSubview(bottomStackView)
-       
+        
         //MARK: - WelcomeLabel constraints
         welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 120
         ).isActive = true

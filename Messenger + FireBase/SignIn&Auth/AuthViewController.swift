@@ -10,28 +10,31 @@ import SwiftUI
 
 class AuthViewController: UIViewController {
 //MARK: - Image
-    let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Logo"), contentMode: .scaleAspectFit)
+    private let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Logo"), contentMode: .scaleAspectFit)
    
 //MARK: - Labels
-    let goodleLabel = UILabel(text: "Get started with")
-    let emailLabel = UILabel(text: "Or sing up with")
-    let alreadyOnboardLabel = UILabel(text: "Already onboard?")
+    private let goodleLabel = UILabel(text: "Get started with")
+    private let emailLabel = UILabel(text: "Or sing up with")
+    private let alreadyOnboardLabel = UILabel(text: "Already onboard?")
     
 //MARK: - Buttons
-    let emailButton = UIButton(title: "Email",
+   private let emailButton = UIButton(title: "Email",
                                titleColor: .white,
                                backgroundColor: .buttonBlack(),
                                isShadow: false)
     
-    let loginButton = UIButton(title: "Login",
+   private let loginButton = UIButton(title: "Login",
                                titleColor: .buttonRed(),
                                backgroundColor: .white,
                                isShadow: true)
     
-    let googleButton = UIButton(title: "Google",
+   private let googleButton = UIButton(title: "Google",
                                 titleColor: .black,
                                 backgroundColor: .white,
                                 isShadow: true)
+    
+   private let signUpVC = SignUpViewController()
+   private let loginVC = LoginViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,20 @@ class AuthViewController: UIViewController {
         
         view.backgroundColor = .white
         setupConstraints()
+        
+        emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
+        
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func emailButtonTapped() {
+        print(#function)
+        present(signUpVC, animated: true, completion: nil)
+    }
+    
+    @objc private func loginButtonTapped() {
+        print(#function)
+        present(loginVC, animated: true, completion: nil)
     }
 }
 //MARK: - Setup Constraints
