@@ -16,6 +16,7 @@
 		F11EE3412572C94C00AF107B /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11EE3402572C94C00AF107B /* MUser.swift */; };
 		F11EE3442572C96900AF107B /* MChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11EE3432572C96900AF107B /* MChat.swift */; };
 		F14284A22576D2240058CBA5 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14284A12576D2240058CBA5 /* Validators.swift */; };
+		F14284A52576D8100058CBA5 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14284A42576D8100058CBA5 /* AuthError.swift */; };
 		F14611F0256EE45E00A8B0D8 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611EF256EE45E00A8B0D8 /* activeChats.json */; };
 		F14611F3256EE46700A8B0D8 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611F2256EE46700A8B0D8 /* waitingChats.json */; };
 		F14611F6256EE52200A8B0D8 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */; };
@@ -63,6 +64,7 @@
 		F11EE3402572C94C00AF107B /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		F11EE3432572C96900AF107B /* MChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MChat.swift; sourceTree = "<group>"; };
 		F14284A12576D2240058CBA5 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		F14284A42576D8100058CBA5 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		F14611EF256EE45E00A8B0D8 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		F14611F2256EE46700A8B0D8 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
@@ -142,9 +144,17 @@
 			children = (
 				F11EE3402572C94C00AF107B /* MUser.swift */,
 				F11EE3432572C96900AF107B /* MChat.swift */,
-				F14284A12576D2240058CBA5 /* Validators.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F14284A72576DFDD0058CBA5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F14284A42576D8100058CBA5 /* AuthError.swift */,
+				F14284A12576D2240058CBA5 /* Validators.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F14611F8256EF74000A8B0D8 /* Cell */ = {
@@ -185,7 +195,9 @@
 				F1BBB753256C4AEB00EB3EC6 /* SignIn&Auth */,
 				F11BAA31257049F3002D7601 /* Protocols */,
 				F16C797125681D14004255D1 /* Extension */,
+				F14284A72576DFDD0058CBA5 /* Helpers */,
 				F16C794E2567E5BA004255D1 /* Assets.xcassets */,
+				F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */,
 				F16C79502567E5BA004255D1 /* LaunchScreen.storyboard */,
 				F16C79532567E5BA004255D1 /* Info.plist */,
 				F1867D3F2575864600412E3C /* GoogleService-Info.plist */,
@@ -219,7 +231,6 @@
 				F1F0BA11257412AF003E2FCA /* InsertableTextField.swift */,
 				F194E9002568488F0050AA61 /* ButtonFormView.swift */,
 				F18308B0256955E3007BC3EC /* OneLineTextField.swift */,
-				F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */,
 				F11BAA282570220E002D7601 /* GradientView.swift */,
 				F16C796F25681CEA004255D1 /* UIKit */,
 			);
@@ -383,6 +394,7 @@
 				F11BAA3525704F5D002D7601 /* SectionHeader.swift in Sources */,
 				F1F0BA0C2573CB5D003E2FCA /* UIViewController+Extension.swift in Sources */,
 				F11BAA292570220E002D7601 /* GradientView.swift in Sources */,
+				F14284A52576D8100058CBA5 /* AuthError.swift in Sources */,
 				F1BBB757256C4C3000EB3EC6 /* MainTabBarController.swift in Sources */,
 				F18308B1256955E3007BC3EC /* OneLineTextField.swift in Sources */,
 				F14284A22576D2240058CBA5 /* Validators.swift in Sources */,
