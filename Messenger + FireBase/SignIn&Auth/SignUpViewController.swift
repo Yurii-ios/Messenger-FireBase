@@ -46,7 +46,7 @@ class SignUpViewController: UIViewController {
             switch result {
             case .success(let user):
                 self.showAlert(with: "Success", and: "Logined")
-                print(user.email)
+                
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription)
             }
@@ -62,9 +62,11 @@ class SignUpViewController: UIViewController {
 }
 
 extension UIViewController {
-    func showAlert(with Title: String, and message: String) {
+    func showAlert(with Title: String, and message: String, completion: @escaping () -> Void = { }) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let actionButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let actionButton = UIAlertAction(title: "OK", style: .default) { (_) in
+            completion()
+        }
         alertController.addAction(actionButton)
         present(alertController, animated: true, completion: nil)
     }
