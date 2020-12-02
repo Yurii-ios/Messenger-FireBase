@@ -60,8 +60,9 @@ class LoginViewController: UIViewController {
         AuthService.shared.login(email: emailTextField.text, password: passwordTextField.text) { (result) in
             switch result {
             case .success(let user):
-                self.showAlert(with: " Login Success", and: "Logined")
-                print(user.email)
+                self.showAlert(with: "Registered", and: "You are registered!") {
+                    self.present(SetupProfileViewController(), animated: true, completion: nil)
+                }
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription)
             }

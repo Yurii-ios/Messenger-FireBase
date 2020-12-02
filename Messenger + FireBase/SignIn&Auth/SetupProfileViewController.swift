@@ -33,6 +33,8 @@ class SetupProfileViewController: UIViewController {
         super.viewDidLoad()
         
         setupConstraints()
+        
+        view.backgroundColor = .mainWhite()
     }
 }
 
