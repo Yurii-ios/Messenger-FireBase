@@ -26,6 +26,8 @@ class SignUpViewController: UIViewController {
     let signUpButton = UIButton(title: "Sign Up", titleColor: .white, backgroundColor: .buttonBlack(), cornerRadius: 4)
     let loginButton = UIButton(type: .system)
     
+    weak var delegate: AuthNavigationDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.setTitle("Login", for: .normal)
@@ -34,6 +36,7 @@ class SignUpViewController: UIViewController {
         setupConstraints()
         view.backgroundColor = .mainWhite()
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     @objc private func signUpButtonTapped() {
@@ -48,6 +51,13 @@ class SignUpViewController: UIViewController {
                 self.showAlert(with: "Error", and: error.localizedDescription)
             }
         }
+    }
+    
+    @objc private func loginButtonTapped() {
+        self.dismiss(animated: true) {
+            self.delegate?.toLoginVC()
+        }
+       
     }
 }
 
