@@ -60,7 +60,9 @@ class SetupProfileViewController: UIViewController {
                                                 sex: sexSegmentedControll.titleForSegment(at: sexSegmentedControll.selectedSegmentIndex)) { (result) in
             switch result {
             case .success(let muser):
-                self.showAlert(with: "Registered", and: "You are registered!")
+                self.showAlert(with: "Registered", and: "You are registered!") {
+                    self.present(MainTabBarController(), animated: true, completion: nil)
+                }
                 print(muser)
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription)
