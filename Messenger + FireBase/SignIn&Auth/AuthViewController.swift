@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import GoogleSignIn
 
 class AuthViewController: UIViewController {
 //MARK: - Image
@@ -48,8 +49,12 @@ class AuthViewController: UIViewController {
         
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
+        googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
+        
         signUpVC.delegate = self
         loginVC.delegate = self
+        
+        GIDSignIn.sharedInstance()?.delegate = self
     }
     
     @objc private func emailButtonTapped() {
@@ -60,6 +65,39 @@ class AuthViewController: UIViewController {
     @objc private func loginButtonTapped() {
         print(#function)
         present(loginVC, animated: true, completion: nil)
+    }
+    
+    @objc private func googleButtonTapped() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+}
+
+//MARK: - Google registration button delegate
+extension AuthViewController: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        AuthService.shared.googleLogin(user: user, error: error) { (result) in
+            switch result {
+            case .success(let user):
+                FirestoreService.shared.getUserData(user: user) { (result) in
+                    switch result {
+                    case .success(let muser):
+                        // avtorizacija
+                        self.showAlert(with: "Success", and: "you authorized")
+                        let mainTabBar = MainTabBarController(currentUser: muser)
+                        mainTabBar.modalPresentationStyle = .fullScreen
+                        self.present(mainTabBar, animated: true, completion: nil)
+                    case .failure(let error):
+                        // registracuja
+                        self.showAlert(with: "Success", and: "you registered") {
+                            self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
+                        }
+                    }
+                }
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        }
     }
 }
 

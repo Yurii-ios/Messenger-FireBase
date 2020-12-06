@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
 class AuthService {
     
@@ -25,6 +26,30 @@ class AuthService {
                 return
             }
             completion(.success(result.user))
+        }
+    }
+    
+    // registers with google button
+    func googleLogin(user: GIDGoogleUser, error: Error!, completion: @escaping(Result<User, Error>) -> Void) {
+        if let error = error {
+            completion(.failure(error))
+        } else {
+            // est li auth y uzera
+            guard let auth = user.authentication else { return }
+            // poly4aem y4etnue dannue
+            let credential = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+            
+            Auth.auth().signIn(with: credential) { (result, error) in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    guard let result = result else {
+                        completion(.failure(error!))
+                        return
+                    }
+                    completion(.success(result.user))
+                }
+            }
         }
     }
     
