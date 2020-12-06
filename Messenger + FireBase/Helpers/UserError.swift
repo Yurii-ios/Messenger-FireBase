@@ -10,6 +10,8 @@ import Foundation
 enum UserError {
     case notField
     case photoNotExist
+    case cannotGetUserInfo
+    case cannotUnwrapToMUser
 }
 
 extension UserError: LocalizedError {
@@ -18,8 +20,11 @@ extension UserError: LocalizedError {
         case .notField:
             return NSLocalizedString("Field is empty", comment: "")
         case .photoNotExist:
-            return NSLocalizedString("No photo", comment: "")
-        
+            return NSLocalizedString("No users photo", comment: "")
+        case .cannotGetUserInfo:
+            return NSLocalizedString("cannot load user data ", comment: "")
+        case .cannotUnwrapToMUser:
+            return NSLocalizedString("cannot convert model user", comment: "")
         }
     }
 }

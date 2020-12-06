@@ -7,7 +7,7 @@
 
 import UIKit
 import SwiftUI
-import Firebase
+import FirebaseAuth
 
 class SetupProfileViewController: UIViewController {
     

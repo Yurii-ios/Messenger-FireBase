@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 struct MUser: Hashable, Decodable {
     var username: String
@@ -14,6 +15,34 @@ struct MUser: Hashable, Decodable {
     var description: String
     var sex: String
     var id: String
+    
+    init(username: String, email: String, avatarStringURL: String, description: String, sex: String, id: String) {
+        self.username = username
+            self.email = email
+            self.avatarStringURL = avatarStringURL
+            self.description = description
+            self.sex = sex
+        self.id = id
+    }
+    
+    init?(document: DocumentSnapshot) {
+        // poly4aem dannue
+        guard let data = document.data() else { return nil }
+        // proweriaem możem li mu s danoj datu poly4it obektu
+        guard let username = data["username"] as? String,
+              let userSex = data["sex"] as? String,
+              let userEmail = data["email"] as? String,
+              let userAvatarStringURL = data["avatarStringURL"] as? String,
+              let userDescription = data["description"] as? String,
+              let userUid = data["uid"] as? String
+        else { return nil }
+        self.username = username
+        self.email = userEmail
+        self.avatarStringURL = userAvatarStringURL
+        self.description = userDescription
+        self.sex = userSex
+        self.id = userUid
+    }
     
     var representation: [String: Any] {
         var rep = ["username": username]
