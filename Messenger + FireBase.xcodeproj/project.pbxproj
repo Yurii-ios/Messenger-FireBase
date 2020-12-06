@@ -48,6 +48,8 @@
 		F1BBB757256C4C3000EB3EC6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBB756256C4C3000EB3EC6 /* MainTabBarController.swift */; };
 		F1BBB75A256C4F0500EB3EC6 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */; };
 		F1EF5A6C257D74A400C74F53 /* UIAplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EF5A6B257D74A400C74F53 /* UIAplication+Extension.swift */; };
+		F1EF5A8E257D7CC700C74F53 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EF5A8D257D7CC700C74F53 /* StorageService.swift */; };
+		F1EF5A91257D806900C74F53 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EF5A90257D806900C74F53 /* UIImage+Extension.swift */; };
 		F1F0BA092573C888003E2FCA /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA082573C888003E2FCA /* UserCell.swift */; };
 		F1F0BA0C2573CB5D003E2FCA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA0B2573CB5D003E2FCA /* UIViewController+Extension.swift */; };
 		F1F0BA0F2573FACD003E2FCA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA0E2573FACD003E2FCA /* ProfileViewController.swift */; };
@@ -102,6 +104,8 @@
 		F1BBB756256C4C3000EB3EC6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		F1EF5A6B257D74A400C74F53 /* UIAplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAplication+Extension.swift"; sourceTree = "<group>"; };
+		F1EF5A8D257D7CC700C74F53 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		F1EF5A90257D806900C74F53 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		F1F0BA082573C888003E2FCA /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		F1F0BA0B2573CB5D003E2FCA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		F1F0BA0E2573FACD003E2FCA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				F1EF5A6B257D74A400C74F53 /* UIAplication+Extension.swift */,
 				F16C796525680A12004255D1 /* UIColor+Extension.swift */,
 				F16C7968256816B1004255D1 /* UILabel+Extension.swift */,
+				F1EF5A90257D806900C74F53 /* UIImage+Extension.swift */,
 				F16C796B25681A07004255D1 /* UIImageView+Extension.swift */,
 				F194E9032568618D0050AA61 /* UIStackView+Extension.swift */,
 				F17E50AD256AF5F00045231D /* SegmentedControl+Extension.swift */,
@@ -254,6 +259,7 @@
 				F11EE3462572CD1D00AF107B /* Models */,
 				F195ECE0257594F100D561B8 /* AuthService.swift */,
 				F1553FD32579819D002D55C5 /* FirestoreService.swift */,
+				F1EF5A8D257D7CC700C74F53 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 				F1553FD125797174002D55C5 /* AuthNavigationDelegate.swift in Sources */,
 				F1F0BA12257412AF003E2FCA /* InsertableTextField.swift in Sources */,
 				F18308AE256944C9007BC3EC /* SignUpViewController.swift in Sources */,
+				F1EF5A91257D806900C74F53 /* UIImage+Extension.swift in Sources */,
 				F1553FD42579819D002D55C5 /* FirestoreService.swift in Sources */,
 				F1BBB75A256C4F0500EB3EC6 /* PeopleViewController.swift in Sources */,
 				F1F0BA0F2573FACD003E2FCA /* ProfileViewController.swift in Sources */,
@@ -446,6 +453,7 @@
 				F194E9042568618D0050AA61 /* UIStackView+Extension.swift in Sources */,
 				F194E9012568488F0050AA61 /* ButtonFormView.swift in Sources */,
 				F17E50AA256ACF2A0045231D /* AddPhotoView.swift in Sources */,
+				F1EF5A8E257D7CC700C74F53 /* StorageService.swift in Sources */,
 				F16C796C25681A07004255D1 /* UIImageView+Extension.swift in Sources */,
 				F11BAA2F257049C8002D7601 /* SelfConfigurationCell.swift in Sources */,
 				F1F0BA092573C888003E2FCA /* UserCell.swift in Sources */,
