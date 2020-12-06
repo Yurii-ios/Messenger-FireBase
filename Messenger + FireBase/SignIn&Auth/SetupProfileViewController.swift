@@ -35,6 +35,11 @@ class SetupProfileViewController: UIViewController {
     init(currentUser: User) {
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
+        
+        //pri registracii 4erez google srazy peredaem imja polzowatelia w polia registracii
+        if let username = currentUser.displayName {
+            fullNameTextField.text = username
+        }
     }
     
     required init?(coder: NSCoder) {

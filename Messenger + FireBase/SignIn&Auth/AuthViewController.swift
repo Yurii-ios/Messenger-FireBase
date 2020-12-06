@@ -83,14 +83,15 @@ extension AuthViewController: GIDSignInDelegate {
                     switch result {
                     case .success(let muser):
                         // avtorizacija
-                        self.showAlert(with: "Success", and: "you authorized")
-                        let mainTabBar = MainTabBarController(currentUser: muser)
-                        mainTabBar.modalPresentationStyle = .fullScreen
-                        self.present(mainTabBar, animated: true, completion: nil)
-                    case .failure(let error):
+                        UIApplication.getTopViewController()?.showAlert(with: "Success", and: "you authorized", completion: {
+                            let mainTabBar = MainTabBarController(currentUser: muser)
+                            mainTabBar.modalPresentationStyle = .fullScreen
+                            UIApplication.getTopViewController()?.present(mainTabBar, animated: true, completion: nil)
+                        })
+                    case .failure(_):
                         // registracuja
-                        self.showAlert(with: "Success", and: "you registered") {
-                            self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
+                        UIApplication.getTopViewController()?.showAlert(with: "Success", and: "you registered") {
+                            UIApplication.getTopViewController()?.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
                         }
                     }
                 }
