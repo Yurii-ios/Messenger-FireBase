@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import FirebaseAuth
+import SDWebImage
 
 class SetupProfileViewController: UIViewController {
     
@@ -39,6 +40,10 @@ class SetupProfileViewController: UIViewController {
         //pri registracii 4erez google srazy peredaem imja polzowatelia w polia registracii
         if let username = currentUser.displayName {
             fullNameTextField.text = username
+        }
+        
+        if let photoUrl = currentUser.photoURL {
+            fullImageView.circleImageView.sd_setImage(with: photoUrl, completed: nil)
         }
     }
     

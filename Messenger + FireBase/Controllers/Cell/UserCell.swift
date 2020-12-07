@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import SDWebImage
 
 class UserCell: UICollectionViewCell, SelfConfiguringCell {
     let userImageView = UIImageView()
@@ -33,9 +34,16 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell {
         containerView.clipsToBounds = true
     }
     
+    //pri pereispolzowanii ja4eek kartitki w každom izobraz ychodili w nil
+    override func prepareForReuse() {
+        userImageView.image = nil
+    }
+    
     func configure<U>(with value: U) where U : Hashable {
         guard let user: MUser = value as? MUser else { return }
-        userImageView.image = UIImage(named: user.avatarStringURL)
+        //userImageView.image = UIImage(named: user.avatarStringURL)
+        guard let url = URL(string: user.avatarStringURL) else { return }
+        userImageView.sd_setImage(with: url, completed: nil)
         userName.text = user.username
     }
     
