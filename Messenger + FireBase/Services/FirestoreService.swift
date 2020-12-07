@@ -16,7 +16,7 @@ class FirestoreService {
     private var usersRef: CollectionReference {
         return db.collection("users")
     }
-    // proweriaem poly4ena lo wsia informacuja ot juzera( zapolnen ego profil)
+    // proweriaem poly4ena li wsia informacuja ot juzera( zapolnen ego profil).
     func getUserData(user: User, completion: @escaping (Result<MUser, Error>) -> Void) {
         // poly4aem dostyp do informacii o user
         let docRef = usersRef.document(user.uid)

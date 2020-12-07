@@ -44,6 +44,25 @@ struct MUser: Hashable, Decodable {
         self.id = userUid
     }
     
+    init?(document: QueryDocumentSnapshot) {
+        // poly4aem dannue
+         let data = document.data()
+        // proweriaem możem li mu s danoj datu poly4it obektu
+        guard let username = data["username"] as? String,
+              let userSex = data["sex"] as? String,
+              let userEmail = data["email"] as? String,
+              let userAvatarStringURL = data["avatarStringURL"] as? String,
+              let userDescription = data["description"] as? String,
+              let userUid = data["uid"] as? String
+        else { return nil }
+        self.username = username
+        self.email = userEmail
+        self.avatarStringURL = userAvatarStringURL
+        self.description = userDescription
+        self.sex = userSex
+        self.id = userUid
+    }
+    
     var representation: [String: Any] {
         var rep = ["username": username]
         rep["sex"] = sex

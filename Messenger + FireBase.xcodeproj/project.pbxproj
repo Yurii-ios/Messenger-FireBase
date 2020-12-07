@@ -22,6 +22,7 @@
 		F14611F3256EE46700A8B0D8 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = F14611F2256EE46700A8B0D8 /* waitingChats.json */; };
 		F14611F6256EE52200A8B0D8 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */; };
 		F14611FA256EF76000A8B0D8 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14611F9256EF76000A8B0D8 /* ActiveChatCell.swift */; };
+		F14B8B41257EB59B00C8665D /* ListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B8B40257EB59B00C8665D /* ListenerService.swift */; };
 		F1553FD125797174002D55C5 /* AuthNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1553FD025797174002D55C5 /* AuthNavigationDelegate.swift */; };
 		F1553FD42579819D002D55C5 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1553FD32579819D002D55C5 /* FirestoreService.swift */; };
 		F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C79452567E5B9004255D1 /* AppDelegate.swift */; };
@@ -76,6 +77,7 @@
 		F14611F2256EE46700A8B0D8 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		F14611F5256EE52200A8B0D8 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		F14611F9256EF76000A8B0D8 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
+		F14B8B40257EB59B00C8665D /* ListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerService.swift; sourceTree = "<group>"; };
 		F1553FD025797174002D55C5 /* AuthNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationDelegate.swift; sourceTree = "<group>"; };
 		F1553FD32579819D002D55C5 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		F16C79422567E5B9004255D1 /* Messenger + FireBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Messenger + FireBase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,7 @@
 				F195ECE0257594F100D561B8 /* AuthService.swift */,
 				F1553FD32579819D002D55C5 /* FirestoreService.swift */,
 				F1EF5A8D257D7CC700C74F53 /* StorageService.swift */,
+				F14B8B40257EB59B00C8665D /* ListenerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				F1F0BA0F2573FACD003E2FCA /* ProfileViewController.swift in Sources */,
 				F16C7960256800FD004255D1 /* UIButton+Extension.swift in Sources */,
 				F1F0BA1825743FC0003E2FCA /* ChatRequestViewController.swift in Sources */,
+				F14B8B41257EB59B00C8665D /* ListenerService.swift in Sources */,
 				F14611F6256EE52200A8B0D8 /* Bundle-Decodable.swift in Sources */,
 				F17E50A1256AC6460045231D /* SetupProfileViewController.swift in Sources */,
 				F16C79462567E5B9004255D1 /* AppDelegate.swift in Sources */,
