@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import SDWebImage
 
 class ProfileViewController: UIViewController {
     
@@ -15,7 +16,22 @@ class ProfileViewController: UIViewController {
     let nameLabel = UILabel(text: "Peter Ben", font: .systemFont(ofSize: 20, weight: .light))
     let aboutMeLabel = UILabel(text: "test test test test test test test test test ", font: .systemFont(ofSize: 16, weight: .light))
     let myTextField = InsertableTextField()
-   
+    
+    private let user: MUser
+    
+    init(user: MUser) {
+        self.user = user
+        self.nameLabel.text = user.username
+        self.aboutMeLabel.text = user.description
+        let url = URL(string: user.avatarStringURL)
+        self.imageView.sd_setImage(with: url, completed: nil)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -83,24 +99,5 @@ extension ProfileViewController {
             myTextField.topAnchor.constraint(equalTo: aboutMeLabel.bottomAnchor, constant: 10),
             myTextField.heightAnchor.constraint(equalToConstant: 48)
         ])
-    }
-}
-
-//MARK: - SwiftUI
-struct ProfileViewControllerProvider: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let profileViewController = ProfileViewController()
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ProfileViewControllerProvider.ContainerView>) -> ProfileViewController {
-            return profileViewController
-        }
-        func updateUIViewController(_ uiViewController: ProfileViewControllerProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ProfileViewControllerProvider.ContainerView>) {
-            
-        }
     }
 }
