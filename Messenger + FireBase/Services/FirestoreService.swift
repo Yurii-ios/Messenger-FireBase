@@ -16,6 +16,9 @@ class FirestoreService {
     private var usersRef: CollectionReference {
         return db.collection("users")
     }
+    
+    var currentUser: MUser!
+    
     // proweriaem poly4ena li wsia informacuja ot juzera( zapolnen ego profil).
     func getUserData(user: User, completion: @escaping (Result<MUser, Error>) -> Void) {
         // poly4aem dostyp do informacii o user
@@ -26,6 +29,8 @@ class FirestoreService {
                     completion(.failure(UserError.cannotUnwrapToMUser))
                     return
                 }
+                //poly4aem tekys4ego otprawitelia soobs4enija w func createWaitingChat
+                self.currentUser = muser
                 completion(.success(muser))
             } else {
                 completion(.failure(UserError.cannotGetUserInfo))
@@ -66,5 +71,37 @@ class FirestoreService {
                 completion(.failure(error))
             }
         }// storageService
+    }
+    
+    // otprawliaet soobs4enie polzowateliam pri nažatii na knopky send w ProfileVC
+    func createWaitingChat(message: String, receiver: MUser, completion: @escaping(Result<Void, Error>) -> Void) {
+        // sozdaem y usera kolekcujy w firebase gde bydyt chranitsia wse ego perepiski
+        // razmes4aem kolekcujy waitingChat w firebase. (chranit ssulky na konkretnogo usera s waiting chats)
+        let reference = db.collection(["users", receiver.id, "waitingChats"].joined(separator: "/"))
+        // delaem ref na soobs4enija
+        let messageRef = reference.document(self.currentUser.id).collection("messages")
+        
+        // sozdaem obekta soobs4enij
+        let message = MMessage(user: currentUser, content: message)
+        
+        let chat = MChat(friendUsername: currentUser.username,
+                         friendAvatarStringURL: currentUser.avatarStringURL,
+                         lastMessageContent: message.content,
+                         friendId: currentUser.id)
+        // dobawliaem nowuj dokyment(chat) s waiting chatom, w ka4estwe nazwanija ispolzyem indefikator usera
+        reference.document(currentUser.id).setData(chat.representation) { (error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            // dobawliaem nowuj dokyment
+            messageRef.addDocument(data: message.representation) { (error) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                completion(.success(Void()))
+            }
+        }
     }
 }

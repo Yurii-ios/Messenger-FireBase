@@ -10,7 +10,10 @@ import SwiftUI
 
 class ActiveChatCell: UICollectionViewCell,SelfConfiguringCell {
     func configure<U>(with value: U) where U : Hashable {
-        
+        guard let chat: MChat = value as? MChat else { return }
+//        friendImageView.image = UIImage(named: value.userImageString)
+//        friendName.text = value.username
+//        lastMessage.text = value.lastMessage
     }
     
    
@@ -22,9 +25,9 @@ class ActiveChatCell: UICollectionViewCell,SelfConfiguringCell {
     let gradientView = GradientView(from: .topTrailing, to: .bottomLeading, startColor: #colorLiteral(red: 0.7882352941, green: 0.631372549, blue: 1, alpha: 1), endColor: #colorLiteral(red: 0.4784313725, green: 0.6980392157, blue: 1, alpha: 1))
     
     func configure(with value: MChat) {
-        friendImageView.image = UIImage(named: value.userImageString)
-        friendName.text = value.username
-        lastMessage.text = value.lastMessage
+//        friendImageView.image = UIImage(named: value.userImageString)
+//        friendName.text = value.username
+//        lastMessage.text = value.lastMessage
     }
     
     override init(frame: CGRect) {

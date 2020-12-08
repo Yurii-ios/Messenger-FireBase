@@ -45,6 +45,7 @@
 		F194E9012568488F0050AA61 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194E9002568488F0050AA61 /* ButtonFormView.swift */; };
 		F194E9042568618D0050AA61 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194E9032568618D0050AA61 /* UIStackView+Extension.swift */; };
 		F195ECE1257594F100D561B8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195ECE0257594F100D561B8 /* AuthService.swift */; };
+		F19E60762580164300DCBEB0 /* MMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E60752580164300DCBEB0 /* MMessage.swift */; };
 		F1BBB751256C387700EB3EC6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBB750256C387700EB3EC6 /* ListViewController.swift */; };
 		F1BBB757256C4C3000EB3EC6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBB756256C4C3000EB3EC6 /* MainTabBarController.swift */; };
 		F1BBB75A256C4F0500EB3EC6 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */; };
@@ -102,6 +103,7 @@
 		F194E9002568488F0050AA61 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		F194E9032568618D0050AA61 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		F195ECE0257594F100D561B8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		F19E60752580164300DCBEB0 /* MMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMessage.swift; sourceTree = "<group>"; };
 		F1BBB750256C387700EB3EC6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		F1BBB756256C4C3000EB3EC6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F1BBB759256C4F0500EB3EC6 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				F11EE3402572C94C00AF107B /* MUser.swift */,
 				F11EE3432572C96900AF107B /* MChat.swift */,
+				F19E60752580164300DCBEB0 /* MMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				F195ECE1257594F100D561B8 /* AuthService.swift in Sources */,
 				F17E509E256A9B620045231D /* LoginViewController.swift in Sources */,
 				F16C79482567E5B9004255D1 /* SceneDelegate.swift in Sources */,
+				F19E60762580164300DCBEB0 /* MMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
