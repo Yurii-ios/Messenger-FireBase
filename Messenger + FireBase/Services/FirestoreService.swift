@@ -117,7 +117,47 @@ class FirestoreService {
                 completion(.failure(error))
                 return
             }
-            completion(.success(Void()))
+            self.deleteMessages(chat: chat, completion: completion)
+        }
+    }
+    
+    func deleteMessages(chat: MChat, completion: @escaping(Result<Void, Error>) -> Void) {
+        let ref = waitingChatsRef.document(chat.friendId).collection("messages")
+        
+        getWaitingChatMessanges(chat: chat) { (result) in
+            switch result {
+            case .success(let messages):
+                for message in messages {
+                    guard let documentId = message.id else { return }
+                    let messageRef = ref.document(documentId)
+                    messageRef.delete { (error) in
+                        if let error = error {
+                            completion(.failure(error))
+                            return
+                        }
+                        completion(.success(Void()))
+                    }
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func getWaitingChatMessanges(chat: MChat, completion: @escaping(Result<[MMessage], Error>) -> Void) {
+        let ref = waitingChatsRef.document(chat.friendId).collection("messages")
+        var messages = [MMessage]()
+        // poly4aem wse documentupo ssulke, dannue s4ituwajutsia tolko odin raz w otli4ii ot listenara
+        ref.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            for document in querySnapshot!.documents {
+                guard let message = MMessage(document: document) else { return }
+                messages.append(message)
+            }
+            completion(.success(messages))
         }
     }
 }
