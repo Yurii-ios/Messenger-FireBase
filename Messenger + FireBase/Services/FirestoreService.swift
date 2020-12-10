@@ -17,9 +17,13 @@ class FirestoreService {
         return db.collection("users")
     }
     
+    private var waitingChatsRef: CollectionReference {
+        return db.collection(["users", currentUser.id, "waitingChats"].joined(separator: "/"))
+    }
+    
     var currentUser: MUser!
     
-    // proweriaem poly4ena li wsia informacuja ot juzera( zapolnen ego profil).
+    // proweriaem poly4ena li wsia informacuja ot juzera( zapolnen ego profil). eta fync srab kak tolko mu zapysk prilož
     func getUserData(user: User, completion: @escaping (Result<MUser, Error>) -> Void) {
         // poly4aem dostyp do informacii o user
         let docRef = usersRef.document(user.uid)
@@ -102,6 +106,18 @@ class FirestoreService {
                 }
                 completion(.success(Void()))
             }
+        }
+    }
+    
+    // ydaliaet polnostjy 4at
+    func deleteWaitingChat(chat: MChat, completion: @escaping(Result<Void, Error>) -> Void) {
+        // dostaem toj 4at kotoruj chotim ydalit
+        waitingChatsRef.document(chat.friendId).delete { (error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            completion(.success(Void()))
         }
     }
 }

@@ -58,6 +58,7 @@
 		F1F0BA12257412AF003E2FCA /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA11257412AF003E2FCA /* InsertableTextField.swift */; };
 		F1F0BA15257424D8003E2FCA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA14257424D8003E2FCA /* UIView+Extension.swift */; };
 		F1F0BA1825743FC0003E2FCA /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0BA1725743FC0003E2FCA /* ChatRequestViewController.swift */; };
+		F1FBE0F72582B71C004C9232 /* WaitingChatsNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBE0F62582B71C004C9232 /* WaitingChatsNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		F1F0BA11257412AF003E2FCA /* InsertableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
 		F1F0BA14257424D8003E2FCA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		F1F0BA1725743FC0003E2FCA /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
+		F1FBE0F62582B71C004C9232 /* WaitingChatsNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatsNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				F11BAA2E257049C8002D7601 /* SelfConfigurationCell.swift */,
 				F1553FD025797174002D55C5 /* AuthNavigationDelegate.swift */,
+				F1FBE0F62582B71C004C9232 /* WaitingChatsNavigation.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				F195ECE1257594F100D561B8 /* AuthService.swift in Sources */,
 				F17E509E256A9B620045231D /* LoginViewController.swift in Sources */,
 				F16C79482567E5B9004255D1 /* SceneDelegate.swift in Sources */,
+				F1FBE0F72582B71C004C9232 /* WaitingChatsNavigation.swift in Sources */,
 				F19E60762580164300DCBEB0 /* MMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,6 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RB6XL782P8;
 				INFOPLIST_FILE = "Messenger + FireBase/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -633,6 +638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RB6XL782P8;
 				INFOPLIST_FILE = "Messenger + FireBase/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

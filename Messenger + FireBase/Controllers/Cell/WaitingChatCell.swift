@@ -11,6 +11,8 @@ import SwiftUI
 class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     func configure<U>(with value: U) where U : Hashable {
         guard let chat: MChat = value as? MChat else { return }
+        // otobrazaen foto otprawiwshego soobs4enie
+        friendImageView.sd_setImage(with: URL(string: chat.friendAvatarStringURL), completed: nil)
     }
     
     static var reuseID: String = "WaitingChatCell"

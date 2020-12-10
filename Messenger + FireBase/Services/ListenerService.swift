@@ -48,4 +48,37 @@ class ListenerService {
         }
         return usersListener
     }
+    // sledit za ožudajus4imi 4atatami
+    func waitingChatsObserve(chats: [MChat], completion: @escaping(Result<[MChat], Error>) -> Void) -> ListenerRegistration? {
+        var chats = chats
+        // ssulka po kotoroj mu bydem sledit wse izmenenija
+        let chatsRef = dataBase.collection(["users", currentUserId, "waitingChats"].joined(separator: "/"))
+        // delaem slyshatelia
+        let chatsListener = chatsRef.addSnapshotListener { (querySnapshot, error) in
+            guard let snapshot = querySnapshot else {
+                completion(.failure(error!))
+                return
+            }
+            // probegaemsia po kagdomy izmenenijy
+            snapshot.documentChanges.forEach { (diff) in
+                // dostaem obekt tipa chat
+                guard let chat = MChat(document: diff.document) else { return }
+                
+                switch diff.type {
+                case .added:
+                    guard !chats.contains(chat) else { return }
+                    chats.append(chat)
+                case .modified:
+                    guard let index = chats.firstIndex(of: chat) else { return }
+                    chats[index] = chat
+                case .removed:
+                    guard let index = chats.firstIndex(of: chat) else { return }
+                    chats.remove(at: index)
+                }
+            }
+            
+            completion(.success(chats))
+        }
+        return chatsListener
+    }
 }

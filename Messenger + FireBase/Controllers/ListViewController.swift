@@ -7,11 +7,14 @@
 
 import UIKit
 import SwiftUI
-
+import FirebaseFirestore
 class ListViewController: UIViewController {
     
     let activeChats = [MChat]()
-    let waitingChats = [MChat]()
+    var waitingChats = [MChat]()
+    
+    // sosdaem slyshatelia kotoruj bydet sledit za activnumi 4atami
+    private var waitingChatsListener: ListenerRegistration?
     
     var collectionView: UICollectionView!
     
@@ -42,6 +45,10 @@ class ListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        waitingChatsListener?.remove()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +57,21 @@ class ListViewController: UIViewController {
         createDataSourse()
         reloadData()
         
+        waitingChatsListener = ListenerService.shared.waitingChatsObserve(chats: waitingChats, completion: { (result) in
+            switch result {
+            case .success(let chats):
+                self.waitingChats = chats
+                // realizowuwaem wspluwajys4ee okno ot polzowatelia kotoruj otprawliaet zapros(soobs4enie) dlia na4ala 4ata
+                if self.waitingChats != [] , self.waitingChats.count <= chats.count {
+                    let chatRequestVC = ChatRequestViewController(chat: chats.last!)
+                    chatRequestVC.delegate = self
+                    self.present(chatRequestVC, animated: true, completion: nil)
+                }
+                self.reloadData()
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        })
     }
     
     private func setupSearchBar() {
@@ -79,6 +101,8 @@ class ListViewController: UIViewController {
         
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseID)
         collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseID)
+        
+        collectionView.delegate = self
     }
     
     private func reloadData() {
@@ -185,8 +209,8 @@ extension ListViewController {
     }
 }
 
-//MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//MARK: -  UICollectionViewDataSource
+extension ListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -196,6 +220,46 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.backgroundColor = .blue
         return cell
     }
+}
+
+//MARK: - UICollectionViewDelegate
+extension ListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //dostaem chat po indeksy
+        guard let chat = self.dataSource?.itemIdentifier(for: indexPath) else { return }
+        // poly4aem sekcujy
+        guard let section = Section(rawValue: indexPath.section) else { return }
+        
+        switch section {
+        case .waitingChats:
+            let chatRequestVC = ChatRequestViewController(chat: chat)
+            // w tech mestach gde mu wuzuwaem ChatRequestViewController
+            chatRequestVC.delegate = self
+            
+            self.present(chatRequestVC, animated: true, completion: nil)
+        case .activeChats:
+            print(indexPath)
+        }
+    }
+}
+//MARK: - Protocol WaitingChatsNavigation
+extension ListViewController: WaitingChatsNavigation {
+    func removeWaitingCtah(chat: MChat) {
+        FirestoreService.shared.deleteWaitingChat(chat: chat) { (result) in
+            switch result {
+            case .success():
+                self.showAlert(with: "Success", and: "Chat \(chat.friendUsername) was delited!")
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        }
+    }
+    
+    func chatToActive(chat: MChat) {
+        print(#function)
+    }
+    
+    
 }
 
 //MARK: - UISearchBarDelegate

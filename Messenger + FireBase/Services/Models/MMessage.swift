@@ -15,7 +15,7 @@ struct MMessage: Hashable {
     let id: String?
     
     var representation: [String: Any] {
-        var rep: [String: Any] = [
+        let rep: [String: Any] = [
             "created": sentDate,
             "senderID": senderId,
             "senderName": senderUsername,
