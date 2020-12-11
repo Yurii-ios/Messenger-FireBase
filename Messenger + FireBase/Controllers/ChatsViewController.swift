@@ -67,7 +67,16 @@ class ChatsViewController: MessagesViewController {
         messages.append(message)
         messages.sort()
         
+        let islatestMessage = messages.firstIndex(of: message) == (messages.count - 1)
+        let shoudScrollToBottom = messagesCollectionView.isAtBottom && islatestMessage
+        
         messagesCollectionView.reloadData()
+        
+        if shoudScrollToBottom {
+            DispatchQueue.main.async {
+                self.messagesCollectionView.scrollToBottom(animated: true)
+            }
+        }
     }
     
     func configureMessageInputBar() {
@@ -158,7 +167,6 @@ extension ChatsViewController:  InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         let message = MMessage(user: user, content: text)
         
-        insertNewMessage(message: message)
         FirestoreService.shared.sendMessage(chat: chat, message: message) { (result) in
             switch result {
             case .success():
@@ -169,5 +177,21 @@ extension ChatsViewController:  InputBarAccessoryViewDelegate {
             }
         }
         inputBar.inputTextView.text = ""
+    }
+}
+
+extension UIScrollView {
+    
+    var isAtBottom: Bool {
+        return contentOffset.y >= verticalOffsetForBottom
+    }
+    
+    // proweriaem na kakom y4astke ekrana mu nachodimsia
+    var verticalOffsetForBottom: CGFloat {
+      let scrollViewHeight = bounds.height
+      let scrollContentSizeHeight = contentSize.height
+      let bottomInset = contentInset.bottom
+      let scrollViewBottomOffset = scrollContentSizeHeight + bottomInset - scrollViewHeight
+      return scrollViewBottomOffset
     }
 }
