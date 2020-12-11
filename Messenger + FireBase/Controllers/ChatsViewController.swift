@@ -159,6 +159,16 @@ extension ChatsViewController: MessagesDisplayDelegate {
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         return .bubble
     }
+    // ystanawliwaem datu otprawki sobs4enij na ekrane 4ata wushe samogo soobs4enija
+    func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        // wuzuwaetsia pri každom 4 soobs4enii
+        if indexPath.item % 4  == 0 {
+            return NSAttributedString(string: MessageKitDateFormatter.shared.string(from: message.sentDate), attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10),
+                                      NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        } else {
+            return nil
+        }
+    }
 }
 
 //MARK: - InputBarAccessoryViewDelegate
