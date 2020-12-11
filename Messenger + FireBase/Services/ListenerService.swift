@@ -114,4 +114,31 @@ class ListenerService {
         }
         return chatsListener
     }
+    
+    // w completion block  wozwras4aem každuj raz tolko odno soobs4enie
+    func messagesObserve(chat: MChat, completion: @escaping(Result<MMessage, Error>) -> Void) -> ListenerRegistration {
+        // sozdaem ssulky na obekt za kotorum bydem sledit
+        let ref = usersRef.document(currentUserId).collection("activeChats").document(chat.friendId).collection("messages")
+        
+        // delaem listener
+        let messageListener = ref.addSnapshotListener { (querySnapshot, error) in
+            guard let snapshot = querySnapshot else {
+                completion(.failure(error!))
+                return
+            }
+            snapshot.documentChanges.forEach { (diff) in
+                guard let message = MMessage(document: diff.document) else { return }
+                switch diff.type {
+                case .added:
+                    // wozwras4aem message naryžy
+                    completion(.success(message))
+                case .modified:
+                    break
+                case .removed:
+                    break
+                }
+            }
+        }
+        return messageListener
+    }
 }

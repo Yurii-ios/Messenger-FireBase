@@ -8,9 +8,13 @@
 import UIKit
 import MessageKit
 import InputBarAccessoryView
+import FirebaseFirestore
 
 class ChatsViewController: MessagesViewController {
     private var messages: [MMessage] = []
+    
+    // sledim tolko za odnim soobs4eniem a na za wsemi
+    private var messageListener: ListenerRegistration?
     
     private let user: MUser
     private let chat: MChat
@@ -27,8 +31,14 @@ class ChatsViewController: MessagesViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        messageListener?.remove()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureMessageInputBar()
         // smes4aem soobs4enie bliže k krajy ekrana, ibo posle otkly4enija awatarki soobs4enija silno otstypali ot kraja ekrana
         if let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
@@ -42,7 +52,14 @@ class ChatsViewController: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         
-        configureMessageInputBar()
+        messageListener = ListenerService.shared.messagesObserve(chat: chat, completion: { (result) in
+            switch result {
+            case .success(let message):
+                self.insertNewMessage(message: message)
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        })
     }
     //otobražaem coobs4enija na ekrane
     private func insertNewMessage(message: MMessage) {
@@ -142,6 +159,15 @@ extension ChatsViewController:  InputBarAccessoryViewDelegate {
         let message = MMessage(user: user, content: text)
         
         insertNewMessage(message: message)
+        FirestoreService.shared.sendMessage(chat: chat, message: message) { (result) in
+            switch result {
+            case .success():
+                // posle otprawlennogo soobs4enija ekrap opyskaetsia w samuj niz k etomy soobs4enijy
+                self.messagesCollectionView.scrollToBottom()
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        }
         inputBar.inputTextView.text = ""
     }
 }
