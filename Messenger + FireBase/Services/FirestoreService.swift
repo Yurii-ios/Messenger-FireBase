@@ -220,4 +220,46 @@ class FirestoreService {
             
         }
     }
+    
+    // otprawliaet nabranue soobs4enija na ekrane ChatsViewController w firebase
+    func sendMessage(chat: MChat, message: MMessage, completion: @escaping(Result<Void, Error>) -> Void) {
+        /*
+        - delaem ref:
+        - na currentUser,
+        - na togo s kem obs4aemsia,
+        - na activeChats
+         */
+        // doberaemsia do aktiwnoga 4ata polzowatelia s ego drygom
+        let friendRef = usersRef.document(chat.friendId).collection("activeChats").document(currentUser.id)
+        
+        // soobs4enija w actiwnom 4ate y dryga
+        let friendMessageRef = friendRef.collection("messages")
+        // ref na soobs4enija polzowatelia
+        let myMessageRef = usersRef.document(currentUser.id).collection("activeChats").document(chat.friendId).collection("messages")
+        
+        let chatForFriend = MChat(friendUsername: currentUser.username,
+                                  friendAvatarStringURL: currentUser.avatarStringURL,
+                                  lastMessageContent: message.content,
+                                  friendId: currentUser.id)
+        // dobawliaem w sozdanue ssulki nyžnyjy nam informacujy
+        friendRef.setData(chatForFriend.representation) { (error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            friendMessageRef.addDocument(data: message.representation) { (error) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                myMessageRef.addDocument(data: message.representation) { (error) in
+                    if let error = error {
+                        completion(.failure(error))
+                        return
+                    }
+                    completion(.success(Void()))
+                }
+            }
+        }
+    }
 }
