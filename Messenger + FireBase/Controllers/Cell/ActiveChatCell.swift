@@ -11,9 +11,9 @@ import SwiftUI
 class ActiveChatCell: UICollectionViewCell,SelfConfiguringCell {
     func configure<U>(with value: U) where U : Hashable {
         guard let chat: MChat = value as? MChat else { return }
-//        friendImageView.image = UIImage(named: value.userImageString)
-//        friendName.text = value.username
-//        lastMessage.text = value.lastMessage
+        friendImageView.sd_setImage(with: URL(string: chat.friendAvatarStringURL), completed: nil)
+        friendName.text = chat.friendUsername
+        lastMessage.text = chat.lastMessageContent
     }
     
    

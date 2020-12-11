@@ -10,11 +10,13 @@ import SwiftUI
 import FirebaseFirestore
 class ListViewController: UIViewController {
     
-    let activeChats = [MChat]()
+    var activeChats = [MChat]()
     var waitingChats = [MChat]()
     
     // sosdaem slyshatelia kotoruj bydet sledit za activnumi 4atami
     private var waitingChatsListener: ListenerRegistration?
+    
+    private var activeChatsListener: ListenerRegistration?
     
     var collectionView: UICollectionView!
     
@@ -47,6 +49,7 @@ class ListViewController: UIViewController {
     
     deinit {
         waitingChatsListener?.remove()
+        activeChatsListener?.remove()
     }
     
     override func viewDidLoad() {
@@ -67,6 +70,16 @@ class ListViewController: UIViewController {
                     chatRequestVC.delegate = self
                     self.present(chatRequestVC, animated: true, completion: nil)
                 }
+                self.reloadData()
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        })
+        
+        activeChatsListener = ListenerService.shared.activeChatsObserve(chats: activeChats, completion: { (result) in
+            switch result {
+            case .success(let chats):
+                self.activeChats = chats
                 self.reloadData()
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription)
