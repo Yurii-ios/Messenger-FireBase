@@ -21,6 +21,10 @@ class FirestoreService {
         return db.collection(["users", currentUser.id, "waitingChats"].joined(separator: "/"))
     }
     
+    private var activeChatsRef: CollectionReference {
+        return db.collection(["users", currentUser.id, "activeChats"].joined(separator: "/"))
+    }
+    
     var currentUser: MUser!
     
     // proweriaem poly4ena li wsia informacuja ot juzera( zapolnen ego profil). eta fync srab kak tolko mu zapysk prilož
@@ -158,6 +162,62 @@ class FirestoreService {
                 messages.append(message)
             }
             completion(.success(messages))
+        }
+    }
+    
+    // izmeniaet(perenosit) waitingChat na activeChat
+    func changeToActive(chat: MChat, completion: @escaping(Result<Void, Error>) -> Void) {
+        /* dlia sozdanija actiwnogo chata nyžno:
+         1. neobchodima wsia inform po wsemy 4aty
+         2. wsia inform po soobs4enijam w danom 4ate
+         */
+        
+        getWaitingChatMessanges(chat: chat) { (result) in
+            // poly4aem wsy inform iz ožudajys4ego 4ata
+            switch result {
+            case .success(let messages):
+                // esli ydalos poly4it wsy infrm - ydaliaem ožudajys4ij chat
+                self.deleteWaitingChat(chat: chat) { (result) in
+                    switch result {
+                    case .success():
+                        // posle yspeshnogo ydalenija sozdaem actiwnuj 4at
+                        self.craateActiveChat(chat: chat, messages: messages) { (result) in
+                            switch result {
+                            case .success():
+                                completion(.success(Void()))
+                            case .failure(let error):
+                                completion(.failure(error))
+                            }
+                        }
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func craateActiveChat(chat: MChat, messages: [MMessage], completion: @escaping(Result<Void, Error>) -> Void) {
+        let messageRef = activeChatsRef.document(chat.friendId).collection("messages")
+        // sozdaem nowyjy ssulky na aktivnuj 4at danomy polzowately i dobawliaem k nemy 4at i soobs4enija
+        activeChatsRef.document(chat.friendId).setData(chat.representation) { (error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            // dobawliaem soobs4enija w 4at
+            for message in messages {
+                messageRef.addDocument(data: message.representation) { (error) in
+                    if let error = error {
+                        completion(.failure(error))
+                        return
+                    }
+                    completion(.success(Void()))
+                }
+            }
+            
         }
     }
 }

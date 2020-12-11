@@ -256,7 +256,14 @@ extension ListViewController: WaitingChatsNavigation {
     }
     
     func chatToActive(chat: MChat) {
-        print(#function)
+        FirestoreService.shared.changeToActive(chat: chat) { (result) in
+            switch result {
+            case .success():
+                self.showAlert(with: "Success", and: "\(chat.friendUsername )")
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        }
     }
     
     
