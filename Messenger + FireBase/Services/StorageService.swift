@@ -80,4 +80,17 @@ class StorageService {
             }
         }
     }
+    
+    func downloadImage(url: URL, completion: @escaping(Result<UIImage?, Error>) -> Void) {
+        let ref = Storage.storage().reference(forURL: url.absoluteString)
+        
+        let megaByte = Int64(1 * 1024 * 1024)
+        ref.getData(maxSize: megaByte) { (data, error) in
+            guard let imageData = data else {
+                completion(.failure(error!))
+                return
+            }
+            completion(.success(UIImage(data: imageData)))
+        }
+    }
 }

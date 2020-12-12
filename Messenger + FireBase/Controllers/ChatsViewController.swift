@@ -43,6 +43,9 @@ class ChatsViewController: MessagesViewController {
         if let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
             layout.textMessageSizeCalculator.incomingAvatarSize = .zero
+            // otprawlenoe photo smes4aem bliže k prawomy krojy ekrana
+            layout.photoMessageSizeCalculator.incomingAvatarSize = .zero
+            layout.photoMessageSizeCalculator.outgoingAvatarSize = .zero
         }
         
         messagesCollectionView.backgroundColor = .mainWhite()
@@ -54,11 +57,21 @@ class ChatsViewController: MessagesViewController {
         
         messageListener = ListenerService.shared.messagesObserve(chat: chat, completion: { (result) in
             switch result {
-            case .success(let message):
+            case .success(var message):
                 if let url = message.downloadURL {
-                    
+                    StorageService.shared.downloadImage(url: url) { [weak self] (result) in
+                        guard let self = self else { return }
+                        switch result {
+                        case .success(let image):
+                            message.image = image
+                            self.insertNewMessage(message: message)
+                        case .failure(let error):
+                            self.showAlert(with: "Error", and: error.localizedDescription)
+                        }
+                    }
+                } else {
+                    self.insertNewMessage(message: message)
                 }
-                self.insertNewMessage(message: message)
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription)
             }
