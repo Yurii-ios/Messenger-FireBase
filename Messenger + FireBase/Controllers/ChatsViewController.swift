@@ -169,6 +169,14 @@ extension ChatsViewController: MessagesDisplayDelegate {
             return nil
         }
     }
+    
+    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        if indexPath.item % 4 == 0 {
+            return 30
+        } else {
+            return 0
+        }
+    }
 }
 
 //MARK: - InputBarAccessoryViewDelegate
